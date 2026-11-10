@@ -1,10 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Mi primera página en GitHub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pascual S. Asesor de Ventas</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Encabezado compacto con flexbox */
+    .header-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #2a2a2a;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Foto redonda pequeña a la izquierda */
+    .profile-img {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* Texto a la derecha */
+    .header-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-text h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+      line-height: 1.3;
+      color: #ffffff;
+    }
+
+    .header-text p {
+      font-size: 0.82rem;
+      color: #a0a0a0;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Botón de WhatsApp */
+    .content-area {
+      max-width: 600px;
+      margin: 25px auto 0 auto;
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #333333;
+      color: #cccccc;
+      padding: 12px 16px;
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
 </head>
 <body>
-    <h1>¡Hola mundo! Mi sitio web ya está en línea.</h1>
+
+  <header class="header-container">
+    <img src="tu-imagen.jpg" alt="Pascual Sanabria" class="profile-img">
+    <div class="header-text">
+      <h1>Pascual S. Asesor de Ventas (Bristol SA)</h1>
+      <p>Electrodomésticos, tecnología y mucho más de Bristol S.A. Encontrá el respaldo, la mejor financiación y atención personalizada para equipar tu hogar.</p>
+    </div>
+  </header>
+
+  <main class="content-area">
+    <a href="https://wa.me/595987331833" class="btn-whatsapp">
+      <span>CONSULTAR POR WHATSAPP</span>
+      <span>&rarr;</span>
+    </a>
+  </main>
+
 </body>
 </html>
