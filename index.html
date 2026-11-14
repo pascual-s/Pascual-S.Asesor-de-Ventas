@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo - Electrodomésticos</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Arial,sans-serif;background:#f2f2f2;color:#222}
+  header{position:sticky;top:0;z-index:100;background:#111;color:#fff;padding:14px 12px;text-align:center}
+  header h1{font-size:22px}
+  header p{font-size:13px;opacity:.85}
+  #searchInput{width:94%;max-width:620px;margin:12px auto 0;display:block;padding:12px 16px;border-radius:25px;border:none;font-size:15px;outline:none}
+  .cats{position:sticky;top:112px;z-index:99;background:#fff;display:flex;gap:8px;overflow-x:auto;padding:10px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+  .cats button{border:1px solid #ddd;background:#f1f1f1;padding:9px 16px;border-radius:20px;font-weight:700;cursor:pointer;flex-shrink:0}
+  .cats button.active{background:#25D366;color:#fff;border-color:#25D366}
+  .cat-title{background:#111;color:#fff;padding:14px;text-align:center;font-size:18px;letter-spacing:1px;margin:16px 12px 4px;border-radius:12px}
+  .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;padding:12px}
+  .product-card{background:#fff;border-radius:14px;padding:10px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06);display:flex;flex-direction:column}
+  .product-img{width:100%;height:150px;object-fit:contain}
+  .product-title{font-size:14px;min-height:38px;margin:8px 0}
+  .price-installment{font-weight:800}
+  .price-cash{font-size:13px;color:#666;margin:4px 0 8px}
+  .btn-whatsapp{background:#25D366;color:#fff;text-decoration:none;padding:10px;border-radius:10px;font-weight:800;display:block;margin-top:auto}
+  .chat-float{position:fixed;right:16px;bottom:16px;z-index:999;width:62px;height:62px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.3);text-decoration:none;font-size:30px}
+  .chat-float span{position:absolute;top:-6px;right:-2px;background:red;color:#fff;font-size:11px;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .no-result{text-align:center;padding:30px;display:none;grid-column:1/-1}
+</style>
+</head>
+<body>
+<header>
+  <h1>🛒 CATÁLOGO</h1>
+  <p>Consultá por WhatsApp - 18 cuotas / Contado</p>
+  <input type="text" id="searchInput" placeholder="🔍 Buscar: heladera, JBL, cocina, horno..." onkeyup="filtrarProductos()">
+</header>
+
+<div class="cats" id="cats">
+  <button class="active" onclick="filtrarCat('todo',this)">Todo</button>
+  <button onclick="filtrarCat('audio',this)">🔊 Audio</button>
+  <button onclick="filtrarCat('cocina',this)">🍳 Cocina</button>
+  <button onclick="filtrarCat('horno',this)">🔥 Hornos / Microondas</button>
+  <button onclick="filtrarCat('heladera',this)">🧊 Heladeras</button>
+  <button onclick="filtrarCat('congelador',this)">❄️ Congeladores</button>
+  <button onclick="filtrarCat('bebedero',this)">💧 Bebederos</button>
+  <button onclick="filtrarCat('wine',this)">🍷 Wine / Visicooler</button>
+</div>
+
+<main>
+<!-- ============ CATEGORÍA: AUDIO / PARLANTES ============ -->
+<h2 class="cat-title" data-cat="audio">🔊 AUDIO / PARLANTES</h2>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-partybox-encore-2-100w-rms-bluetooth-con-2-microfonos-inalambricos-parlante-jbl-partybox-encore-2-100w-rms-bluetooth-con-2-microfonos-inalambricos.webp" alt="Parlante JBL PartyBox Encore 2 100W RMS Bluetooth con 2 Micrófonos Inalámbricos" class="product-img">
+        <h3 class="product-title">Parlante JBL PartyBox Encore 2 100W RMS Bluetooth con 2 Micrófonos Inalámbricos</h3>
+        <div class="price-installment">18 x Gs. 269.000</div>
+        <div class="price-cash">Contado PYG 3.049.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20PartyBox%20Encore%202%20100W%20RMS%20Bluetooth%20con%202%20Micr%C3%B3fonos%20Inal%C3%A1mbricos" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-flip-7-bluetooth-portatil-resistente-al-agua-parlante-jbl-flip-7-bluetooth-portatil-resistente-al-agua.webp" alt="Parlante JBL Flip 7 Bluetooth Portátil Resistente al Agua" class="product-img">
+        <h3 class="product-title">Parlante JBL Flip 7 Bluetooth Portátil Resistente al Agua</h3>
+        <div class="price-installment">18 x Gs. 89.000</div>
+        <div class="price-cash">Contado PYG 999.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20Flip%207%20Bluetooth%20Port%C3%A1til%20Resistente%20al%20Agua" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-charge-6-bluetooth-portatil-parlante-jbl-charge-6-bluetooth-portatil.webp" alt="Parlante JBL Charge 6 Bluetooth Portátil" class="product-img">
+        <h3 class="product-title">Parlante JBL Charge 6 Bluetooth Portátil</h3>
+        <div class="price-installment">18 x Gs. 119.000</div>
+        <div class="price-cash">Contado PYG 1.349.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20Charge%206%20Bluetooth%20Port%C3%A1til" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-partybox-encore-essential-2-100w-bluetooth-parlante-jbl-partybox-encore-essential-2-100w-bluetooth.webp" alt="Parlante JBL PartyBox Encore Essential 2 100W Bluetooth" class="product-img">
+        <h3 class="product-title">Parlante JBL PartyBox Encore Essential 2 100W Bluetooth</h3>
+        <div class="price-installment">18 x Gs. 209.000</div>
+        <div class="price-cash">Contado PYG 2.359.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20PartyBox%20Encore%20Essential%202%20100W%20Bluetooth" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-partybox-320-240w-bluetooth-luces-led-parlante-jbl-partybox-320-240w-bluetooth-luces-led.webp" alt="Parlante JBL PartyBox 320 240W Bluetooth Luces LED" class="product-img">
+        <h3 class="product-title">Parlante JBL PartyBox 320 240W Bluetooth Luces LED</h3>
+        <div class="price-installment">18 x Gs. 349.000</div>
+        <div class="price-cash">Contado PYG 3.899.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20PartyBox%20320%20240W%20Bluetooth%20Luces%20LED" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-partybox-120-160w-bluetooth-luces-led-parlante-jbl-partybox-120-160w-bluetooth-luces-led.webp" alt="Parlante JBL PartyBox 120 160W Bluetooth Luces LED" class="product-img">
+        <h3 class="product-title">Parlante JBL PartyBox 120 160W Bluetooth Luces LED</h3>
+        <div class="price-installment">18 x Gs. 229.000</div>
+        <div class="price-cash">Contado PYG 2.559.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20PartyBox%20120%20160W%20Bluetooth%20Luces%20LED" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-partybox-110-160w-bluetooth-parlante-jbl-partybox-110-160w-bluetooth.webp" alt="Parlante JBL PartyBox 110 160W Bluetooth" class="product-img">
+        <h3 class="product-title">Parlante JBL PartyBox 110 160W Bluetooth</h3>
+        <div class="price-installment">18 x Gs. 199.000</div>
+        <div class="price-cash">Contado PYG 2.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20PartyBox%20110%20160W%20Bluetooth" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-partybox-310-240w-bluetooth-luces-led-parlante-jbl-partybox-310-240w-bluetooth-luces-led.webp" alt="Parlante JBL PartyBox 310 240W Bluetooth Luces LED" class="product-img">
+        <h3 class="product-title">Parlante JBL PartyBox 310 240W Bluetooth Luces LED</h3>
+        <div class="price-installment">18 x Gs. 329.000</div>
+        <div class="price-cash">Contado PYG 3.699.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20PartyBox%20310%20240W%20Bluetooth%20Luces%20LED" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-flip-6-bluetooth-portatil-parlante-jbl-flip-6-bluetooth-portatil.webp" alt="Parlante JBL Flip 6 Bluetooth Portátil" class="product-img">
+        <h3 class="product-title">Parlante JBL Flip 6 Bluetooth Portátil</h3>
+        <div class="price-installment">18 x Gs. 69.000</div>
+        <div class="price-cash">Contado PYG 779.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20Flip%206%20Bluetooth%20Port%C3%A1til" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-charge-5-wifi-bluetooth-portatil-parlante-jbl-charge-5-wifi-bluetooth-portatil.webp" alt="Parlante JBL Charge 5 WiFi Bluetooth Portátil" class="product-img">
+        <h3 class="product-title">Parlante JBL Charge 5 WiFi Bluetooth Portátil</h3>
+        <div class="price-installment">18 x Gs. 109.000</div>
+        <div class="price-cash">Contado PYG 1.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20Charge%205%20WiFi%20Bluetooth%20Port%C3%A1til" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-flip-5-bluetooth-portatil-parlante-jbl-flip-5-bluetooth-portatil.webp" alt="Parlante JBL Flip 5 Bluetooth Portátil" class="product-img">
+        <h3 class="product-title">Parlante JBL Flip 5 Bluetooth Portátil</h3>
+        <div class="price-installment">18 x Gs. 59.000</div>
+        <div class="price-cash">Contado PYG 659.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20Flip%205%20Bluetooth%20Port%C3%A1til" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-go-4-bluetooth-portatil-parlante-jbl-go-4-bluetooth-portatil.webp" alt="Parlante JBL Go 4 Bluetooth Portátil" class="product-img">
+        <h3 class="product-title">Parlante JBL Go 4 Bluetooth Portátil</h3>
+        <div class="price-installment">18 x Gs. 39.000</div>
+        <div class="price-cash">Contado PYG 419.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20Go%204%20Bluetooth%20Port%C3%A1til" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-partybox-encore-100w-bluetooth-parlante-jbl-partybox-encore-100w-bluetooth.webp" alt="Parlante JBL PartyBox Encore 100W Bluetooth" class="product-img">
+        <h3 class="product-title">Parlante JBL PartyBox Encore 100W Bluetooth</h3>
+        <div class="price-installment">18 x Gs. 249.000</div>
+        <div class="price-cash">Contado PYG 2.799.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20PartyBox%20Encore%20100W%20Bluetooth" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-xtreme-4-bluetooth-portatil-parlante-jbl-xtreme-4-bluetooth-portatil.webp" alt="Parlante JBL Xtreme 4 Bluetooth Portátil" class="product-img">
+        <h3 class="product-title">Parlante JBL Xtreme 4 Bluetooth Portátil</h3>
+        <div class="price-installment">18 x Gs. 179.000</div>
+        <div class="price-cash">Contado PYG 1.999.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20Xtreme%204%20Bluetooth%20Port%C3%A1til" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-boombox-3-bluetooth-portatil-parlante-jbl-boombox-3-bluetooth-portatil.webp" alt="Parlante JBL Boombox 3 Bluetooth Portátil" class="product-img">
+        <h3 class="product-title">Parlante JBL Boombox 3 Bluetooth Portátil</h3>
+        <div class="price-installment">18 x Gs. 299.000</div>
+        <div class="price-cash">Contado PYG 3.399.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20Boombox%203%20Bluetooth%20Port%C3%A1til" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/caja-acustica-jbl-eon715-15-650w-rms-bluetooth-profesional-caja-acustica-jbl-eon715-15-650w-rms-bluetooth-profesional.webp" alt="Caja Acústica JBL EON715 15&quot; 650W RMS Bluetooth Profesional" class="product-img">
+        <h3 class="product-title">Caja Acústica JBL EON715 15" 650W RMS Bluetooth Profesional</h3>
+        <div class="price-installment">18 x Gs. 369.000</div>
+        <div class="price-cash">Contado PYG 4.499.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Caja%20Ac%C3%BAstica%20JBL%20EON715%2015%22%20650W%20RMS%20Bluetooth%20Profesional" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-partybox-710-bluetooth-800w-rms-luces-led-karaoke-ipx4-parlante-jbl-partybox-710-bluetooth-800w-rms-luces-led-karaoke-ipx4.webp" alt="Parlante JBL PartyBox 710 Bluetooth 800W RMS Luces LED Karaoke IPX4" class="product-img">
+        <h3 class="product-title">Parlante JBL PartyBox 710 Bluetooth 800W RMS Luces LED Karaoke IPX4</h3>
+        <div class="price-installment">18 x Gs. 429.000</div>
+        <div class="price-cash">Contado PYG 4.859.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20PartyBox%20710%20Bluetooth%20800W%20RMS%20Luces%20LED%20Karaoke%20IPX4" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-partybox-720-negro-800w-bluetooth-con-luces-led-parlante-jbl-partybox-720-negro-800w-bluetooth-con-luces-led.webp" alt="Parlante JBL PartyBox 720 Negro 800W Bluetooth con Luces LED" class="product-img">
+        <h3 class="product-title">Parlante JBL PartyBox 720 Negro 800W Bluetooth con Luces LED</h3>
+        <div class="price-installment">18 x Gs. 479.000</div>
+        <div class="price-cash">Contado PYG 5.459.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20PartyBox%20720%20Negro%20800W%20Bluetooth%20con%20Luces%20LED" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-bose-s1-pro-wireless-pa-system-bivolt-parlante-bose-s1-pro-wireless-pa-system-bivolt.webp" alt="Parlante Bose S1 Pro+ Wireless PA System Bivolt" class="product-img">
+        <h3 class="product-title">Parlante Bose S1 Pro+ Wireless PA System Bivolt</h3>
+        <div class="price-installment">18 x Gs. 549.000</div>
+        <div class="price-cash">Contado PYG 6.159.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20Bose%20S1%20Pro%2B%20Wireless%20PA%20System%20Bivolt" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/barra-de-sonido-soundbar-jbl-1300x-mk2-wireless-bivolt-barra-de-sonido-soundbar-jbl-1300x-mk2-wireless-bivolt.webp" alt="Barra de Sonido Soundbar JBL 1300X MK2 Wireless Bivolt" class="product-img">
+        <h3 class="product-title">Barra de Sonido Soundbar JBL 1300X MK2 Wireless Bivolt</h3>
+        <div class="price-installment">18 x Gs. 619.000</div>
+        <div class="price-cash">Contado PYG 7.349.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Barra%20de%20Sonido%20Soundbar%20JBL%201300X%20MK2%20Wireless%20Bivolt" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-partybox-ultimate-bluetooth-wifi-1100w-rms-dolby-atmos-parlante-jbl-partybox-ultimate-bluetooth-wifi-1100w-rms-dolby-atmos.webp" alt="Parlante JBL PartyBox Ultimate Bluetooth WiFi 1100W RMS Dolby Atmos" class="product-img">
+        <h3 class="product-title">Parlante JBL PartyBox Ultimate Bluetooth WiFi 1100W RMS Dolby Atmos</h3>
+        <div class="price-installment">18 x Gs. 669.000</div>
+        <div class="price-cash">Contado PYG 7.579.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20PartyBox%20Ultimate%20Bluetooth%20WiFi%201100W%20RMS%20Dolby%20Atmos" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-bose-s1-pro-system-bluetooth-bivolt-869-parlante-bose-s1-pro-system-bluetooth-bivolt-869.webp" alt="Parlante Bose S1 Pro+ System Bluetooth Bivolt 869" class="product-img">
+        <h3 class="product-title">Parlante Bose S1 Pro+ System Bluetooth Bivolt 869</h3>
+        <div class="price-installment">18 x Gs. 689.000</div>
+        <div class="price-cash">Contado PYG 7.679.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20Bose%20S1%20Pro%2B%20System%20Bluetooth%20Bivolt%20869" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-partybox-ultimate-2-1500w-rms-bluetooth-parlante-jbl-partybox-ultimate-2-1500w-rms-bluetooth.webp" alt="Parlante JBL PartyBox Ultimate 2 1500W RMS Bluetooth" class="product-img">
+        <h3 class="product-title">Parlante JBL PartyBox Ultimate 2 1500W RMS Bluetooth</h3>
+        <div class="price-installment">18 x Gs. 739.000</div>
+        <div class="price-cash">Contado PYG 8.689.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20PartyBox%20Ultimate%202%201500W%20RMS%20Bluetooth" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/microfono-insta360-mic-air-inalambrico-para-x5-cinsabwb-1tx-1rx-microfono-insta360-mic-air-inalambrico-para-x5-cinsabwb-1tx-1rx.webp" alt="Micrófono Insta360 Mic Air Inalámbrico para X5 CINSABWB (1TX + 1RX)" class="product-img">
+        <h3 class="product-title">Micrófono Insta360 Mic Air Inalámbrico para X5 CINSABWB (1TX + 1RX)</h3>
+        <div class="price-installment">18 x Gs. 59.000</div>
+        <div class="price-cash">Contado PYG 689.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Micr%C3%B3fono%20Insta360%20Mic%20Air%20Inal%C3%A1mbrico%20para%20X5%20CINSABWB%20(1TX%20%2B%201RX)" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+    
+</div> <!-- cierra AUDIO -->
+
+<!-- ============ CATEGORÍA: COCINA ============ -->
+<h2 class="cat-title" data-cat="cocina">🍳 COCINA</h2>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/cocina-electrolux-4-hornallas-56gx-inox-con-horno-electrico-cocina-electrolux-4-hornallas-56gx-inox-con-horno-electrico.jpg" alt="Cocina Electrolux 4 Hornallas 56GX Inox con Horno Eléctrico" class="product-img">
+        <h3 class="product-title">Cocina Electrolux 4 Hornallas 56GX Inox con Horno Eléctrico</h3>
+        <div class="price-installment">18 x Gs. 289.000</div>
+        <div class="price-cash">Contado PYG 3.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Cocina%20Electrolux%204%20Hornallas%2056GX%20Inox%20con%20Horno%20El%C3%A9ctrico" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/cocina-electrolux-5-hornallas-76gx-inox-con-horno-electrico-cocina-electrolux-5-hornallas-76gx-inox-con-horno-electrico.jpg" alt="Cocina Electrolux 5 Hornallas 76GX Inox con Horno Eléctrico" class="product-img">
+        <h3 class="product-title">Cocina Electrolux 5 Hornallas 76GX Inox con Horno Eléctrico</h3>
+        <div class="price-installment">18 x Gs. 359.000</div>
+        <div class="price-cash">Contado PYG 3.999.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Cocina%20Electrolux%205%20Hornallas%2076GX%20Inox%20con%20Horno%20El%C3%A9ctrico" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/cocina-midea-4-hornallas-inox-con-horno-electrico-cocina-midea-4-hornallas-inox-con-horno-electrico.jpg" alt="Cocina Midea 4 Hornallas Inox con Horno Eléctrico" class="product-img">
+        <h3 class="product-title">Cocina Midea 4 Hornallas Inox con Horno Eléctrico</h3>
+        <div class="price-installment">18 x Gs. 229.000</div>
+        <div class="price-cash">Contado PYG 2.549.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Cocina%20Midea%204%20Hornallas%20Inox%20con%20Horno%20El%C3%A9ctrico" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/cocina-midea-5-hornallas-inox-con-horno-electrico-cocina-midea-5-hornallas-inox-con-horno-electrico.jpg" alt="Cocina Midea 5 Hornallas Inox con Horno Eléctrico" class="product-img">
+        <h3 class="product-title">Cocina Midea 5 Hornallas Inox con Horno Eléctrico</h3>
+        <div class="price-installment">18 x Gs. 289.000</div>
+        <div class="price-cash">Contado PYG 3.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Cocina%20Midea%205%20Hornallas%20Inox%20con%20Horno%20El%C3%A9ctrico" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/cocina-eskabe-4-hornallas-blanca-con-horno-a-gas-cocina-eskabe-4-hornallas-blanca-con-horno-a-gas.jpg" alt="Cocina Eskabe 4 Hornallas Blanca con Horno a Gas" class="product-img">
+        <h3 class="product-title">Cocina Eskabe 4 Hornallas Blanca con Horno a Gas</h3>
+        <div class="price-installment">18 x Gs. 199.000</div>
+        <div class="price-cash">Contado PYG 2.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Cocina%20Eskabe%204%20Hornallas%20Blanca%20con%20Horno%20a%20Gas" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/cocina-eskabe-5-hornallas-inox-con-horno-a-gas-cocina-eskabe-5-hornallas-inox-con-horno-a-gas.jpg" alt="Cocina Eskabe 5 Hornallas Inox con Horno a Gas" class="product-img">
+        <h3 class="product-title">Cocina Eskabe 5 Hornallas Inox con Horno a Gas</h3>
+        <div class="price-installment">18 x Gs. 279.000</div>
+        <div class="price-cash">Contado PYG 3.099.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Cocina%20Eskabe%205%20Hornallas%20Inox%20con%20Horno%20a%20Gas" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/cocina-whirlpool-4-hornallas-inox-con-horno-electrico-cocina-whirlpool-4-hornallas-inox-con-horno-electrico.jpg" alt="Cocina Whirlpool 4 Hornallas Inox con Horno Eléctrico" class="product-img">
+        <h3 class="product-title">Cocina Whirlpool 4 Hornallas Inox con Horno Eléctrico</h3>
+        <div class="price-installment">18 x Gs. 329.000</div>
+        <div class="price-cash">Contado PYG 3.699.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Cocina%20Whirlpool%204%20Hornallas%20Inox%20con%20Horno%20El%C3%A9ctrico" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/cocina-samsung-4-hornallas-inox-con-horno-electrico-cocina-samsung-4-hornallas-inox-con-horno-electrico.jpg" alt="Cocina Samsung 4 Hornallas Inox con Horno Eléctrico" class="product-img">
+        <h3 class="product-title">Cocina Samsung 4 Hornallas Inox con Horno Eléctrico</h3>
+        <div class="price-installment">18 x Gs. 349.000</div>
+        <div class="price-cash">Contado PYG 3.899.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Cocina%20Samsung%204%20Hornallas%20Inox%20con%20Horno%20El%C3%A9ctrico" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/anafe-electrolux-4-hornallas-a-gas-inox-anafe-electrolux-4-hornallas-a-gas-inox.jpg" alt="Anafe Electrolux 4 Hornallas a Gas Inox" class="product-img">
+        <h3 class="product-title">Anafe Electrolux 4 Hornallas a Gas Inox</h3>
+        <div class="price-installment">18 x Gs. 159.000</div>
+        <div class="price-cash">Contado PYG 1.759.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Anafe%20Electrolux%204%20Hornallas%20a%20Gas%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/anafe-electrolux-5-hornallas-a-gas-inox-anafe-electrolux-5-hornallas-a-gas-inox.jpg" alt="Anafe Electrolux 5 Hornallas a Gas Inox" class="product-img">
+        <h3 class="product-title">Anafe Electrolux 5 Hornallas a Gas Inox</h3>
+        <div class="price-installment">18 x Gs. 199.000</div>
+        <div class="price-cash">Contado PYG 2.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Anafe%20Electrolux%205%20Hornallas%20a%20Gas%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/anafe-midea-4-hornallas-vitroceramico-electrico-anafe-midea-4-hornallas-vitroceramico-electrico.jpg" alt="Anafe Midea 4 Hornallas Vitrocerámico Eléctrico" class="product-img">
+        <h3 class="product-title">Anafe Midea 4 Hornallas Vitrocerámico Eléctrico</h3>
+        <div class="price-installment">18 x Gs. 179.000</div>
+        <div class="price-cash">Contado PYG 1.999.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Anafe%20Midea%204%20Hornallas%20Vitrocer%C3%A1mico%20El%C3%A9ctrico" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/anafe-midea-2-hornallas-induccion-anafe-midea-2-hornallas-induccion.jpg" alt="Anafe Midea 2 Hornallas Inducción" class="product-img">
+        <h3 class="product-title">Anafe Midea 2 Hornallas Inducción</h3>
+        <div class="price-installment">18 x Gs. 99.000</div>
+        <div class="price-cash">Contado PYG 1.099.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Anafe%20Midea%202%20Hornallas%20Inducci%C3%B3n" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/campana-electrolux-60cm-inox-con-filtro-de-carbon-campana-electrolux-60cm-inox-con-filtro-de-carbon.jpg" alt="Campana Electrolux 60cm Inox con Filtro de Carbón" class="product-img">
+        <h3 class="product-title">Campana Electrolux 60cm Inox con Filtro de Carbón</h3>
+        <div class="price-installment">18 x Gs. 119.000</div>
+        <div class="price-cash">Contado PYG 1.329.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Campana%20Electrolux%2060cm%20Inox%20con%20Filtro%20de%20Carb%C3%B3n" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/campana-electrolux-90cm-inox-con-filtro-de-carbon-campana-electrolux-90cm-inox-con-filtro-de-carbon.jpg" alt="Campana Electrolux 90cm Inox con Filtro de Carbón" class="product-img">
+        <h3 class="product-title">Campana Electrolux 90cm Inox con Filtro de Carbón</h3>
+        <div class="price-installment">18 x Gs. 159.000</div>
+        <div class="price-cash">Contado PYG 1.759.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Campana%20Electrolux%2090cm%20Inox%20con%20Filtro%20de%20Carb%C3%B3n" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/campana-midea-60cm-inox-campana-midea-60cm-inox.jpg" alt="Campana Midea 60cm Inox" class="product-img">
+        <h3 class="product-title">Campana Midea 60cm Inox</h3>
+        <div class="price-installment">18 x Gs. 89.000</div>
+        <div class="price-cash">Contado PYG 999.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Campana%20Midea%2060cm%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/campana-midea-90cm-inox-campana-midea-90cm-inox.jpg" alt="Campana Midea 90cm Inox" class="product-img">
+        <h3 class="product-title">Campana Midea 90cm Inox</h3>
+        <div class="price-installment">18 x Gs. 119.000</div>
+        <div class="price-cash">Contado PYG 1.329.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Campana%20Midea%2090cm%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/purificador-electrolux-60cm-blanco-purificador-electrolux-60cm-blanco.jpg" alt="Purificador Electrolux 60cm Blanco" class="product-img">
+        <h3 class="product-title">Purificador Electrolux 60cm Blanco</h3>
+        <div class="price-installment">18 x Gs. 79.000</div>
+        <div class="price-cash">Contado PYG 879.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Purificador%20Electrolux%2060cm%20Blanco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parrilla-electrica-midea-2000w-con-termostato-parrilla-electrica-midea-2000w-con-termostato.jpg" alt="Parrilla Eléctrica Midea 2000W con Termostato" class="product-img">
+        <h3 class="product-title">Parrilla Eléctrica Midea 2000W con Termostato</h3>
+        <div class="price-installment">18 x Gs. 69.000</div>
+        <div class="price-cash">Contado PYG 759.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Parrilla%20El%C3%A9ctrica%20Midea%202000W%20con%20Termostato" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/placa-electrica-midea-2-hornallas-placa-electrica-midea-2-hornallas.jpg" alt="Placa Eléctrica Midea 2 Hornallas" class="product-img">
+        <h3 class="product-title">Placa Eléctrica Midea 2 Hornallas</h3>
+        <div class="price-installment">18 x Gs. 49.000</div>
+        <div class="price-cash">Contado PYG 549.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Placa%20El%C3%A9ctrica%20Midea%202%20Hornallas" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/churrasquera-electrica-midea-1800w-churrasquera-electrica-midea-1800w.jpg" alt="Churrasquera Eléctrica Midea 1800W" class="product-img">
+        <h3 class="product-title">Churrasquera Eléctrica Midea 1800W</h3>
+        <div class="price-installment">18 x Gs. 59.000</div>
+        <div class="price-cash">Contado PYG 659.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Churrasquera%20El%C3%A9ctrica%20Midea%201800W" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/cocina-consul-4-hornallas-blanca-con-horno-a-gas-cocina-consul-4-hornallas-blanca-con-horno-a-gas.jpg" alt="Cocina Consul 4 Hornallas Blanca con Horno a Gas" class="product-img">
+        <h3 class="product-title">Cocina Consul 4 Hornallas Blanca con Horno a Gas</h3>
+        <div class="price-installment">18 x Gs. 189.000</div>
+        <div class="price-cash">Contado PYG 2.099.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Cocina%20Consul%204%20Hornallas%20Blanca%20con%20Horno%20a%20Gas" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/cocina-consul-5-hornallas-inox-con-horno-electrico-cocina-consul-5-hornallas-inox-con-horno-electrico.jpg" alt="Cocina Consul 5 Hornallas Inox con Horno Eléctrico" class="product-img">
+        <h3 class="product-title">Cocina Consul 5 Hornallas Inox con Horno Eléctrico</h3>
+        <div class="price-installment">18 x Gs. 259.000</div>
+        <div class="price-cash">Contado PYG 2.889.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Cocina%20Consul%205%20Hornallas%20Inox%20con%20Horno%20El%C3%A9ctrico" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/anafe-whirlpool-4-hornallas-a-gas-inox-anafe-whirlpool-4-hornallas-a-gas-inox.jpg" alt="Anafe Whirlpool 4 Hornallas a Gas Inox" class="product-img">
+        <h3 class="product-title">Anafe Whirlpool 4 Hornallas a Gas Inox</h3>
+        <div class="price-installment">18 x Gs. 179.000</div>
+        <div class="price-cash">Contado PYG 1.999.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Anafe%20Whirlpool%204%20Hornallas%20a%20Gas%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/campana-whirlpool-60cm-inox-campana-whirlpool-60cm-inox.jpg" alt="Campana Whirlpool 60cm Inox" class="product-img">
+        <h3 class="product-title">Campana Whirlpool 60cm Inox</h3>
+        <div class="price-installment">18 x Gs. 109.000</div>
+        <div class="price-cash">Contado PYG 1.219.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Campana%20Whirlpool%2060cm%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/cocina-electrolux-4-hornallas-56gpb-blanca-con-horno-a-gas-cocina-electrolux-4-hornallas-56gpb-blanca-con-horno-a-gas.jpg" alt="Cocina Electrolux 4 Hornallas 56GPB Blanca con Horno a Gas" class="product-img">
+        <h3 class="product-title">Cocina Electrolux 4 Hornallas 56GPB Blanca con Horno a Gas</h3>
+        <div class="price-installment">18 x Gs. 219.000</div>
+        <div class="price-cash">Contado PYG 2.449.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Cocina%20Electrolux%204%20Hornallas%2056GPB%20Blanca%20con%20Horno%20a%20Gas" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+    
+</div> <!-- cierra COCINA -->
+
+<!-- ============ CATEGORÍA: HORNOS / MICROONDAS ============ -->
+<h2 class="cat-title" data-cat="horno">🔥 HORNOS / MICROONDAS</h2>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/horno-electrico-electrolux-50-litros-oe8ep-inox-con-grill-horno-electrico-electrolux-50-litros-oe8ep-inox-con-grill.jpg" alt="Horno Eléctrico Electrolux 50 Litros OE8EP Inox con Grill" class="product-img">
+        <h3 class="product-title">Horno Eléctrico Electrolux 50 Litros OE8EP Inox con Grill</h3>
+        <div class="price-installment">18 x Gs. 149.000</div>
+        <div class="price-cash">Contado PYG 1.659.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Horno%20El%C3%A9ctrico%20Electrolux%2050%20Litros%20OE8EP%20Inox%20con%20Grill" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/horno-electrico-electrolux-80-litros-oe9ep-inox-con-grill-horno-electrico-electrolux-80-litros-oe9ep-inox-con-grill.jpg" alt="Horno Eléctrico Electrolux 80 Litros OE9EP Inox con Grill" class="product-img">
+        <h3 class="product-title">Horno Eléctrico Electrolux 80 Litros OE9EP Inox con Grill</h3>
+        <div class="price-installment">18 x Gs. 199.000</div>
+        <div class="price-cash">Contado PYG 2.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Horno%20El%C3%A9ctrico%20Electrolux%2080%20Litros%20OE9EP%20Inox%20con%20Grill" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/horno-electrico-midea-35-litros-con-grill-horno-electrico-midea-35-litros-con-grill.jpg" alt="Horno Eléctrico Midea 35 Litros con Grill" class="product-img">
+        <h3 class="product-title">Horno Eléctrico Midea 35 Litros con Grill</h3>
+        <div class="price-installment">18 x Gs. 89.000</div>
+        <div class="price-cash">Contado PYG 999.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Horno%20El%C3%A9ctrico%20Midea%2035%20Litros%20con%20Grill" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/horno-electrico-midea-50-litros-con-grill-horno-electrico-midea-50-litros-con-grill.jpg" alt="Horno Eléctrico Midea 50 Litros con Grill" class="product-img">
+        <h3 class="product-title">Horno Eléctrico Midea 50 Litros con Grill</h3>
+        <div class="price-installment">18 x Gs. 119.000</div>
+        <div class="price-cash">Contado PYG 1.329.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Horno%20El%C3%A9ctrico%20Midea%2050%20Litros%20con%20Grill" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/horno-empotrable-electrolux-80-litros-oe9mx-inox-horno-empotrable-electrolux-80-litros-oe9mx-inox.jpg" alt="Horno Empotrable Electrolux 80 Litros OE9MX Inox" class="product-img">
+        <h3 class="product-title">Horno Empotrable Electrolux 80 Litros OE9MX Inox</h3>
+        <div class="price-installment">18 x Gs. 289.000</div>
+        <div class="price-cash">Contado PYG 3.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Horno%20Empotrable%20Electrolux%2080%20Litros%20OE9MX%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/horno-empotrable-midea-70-litros-inox-horno-empotrable-midea-70-litros-inox.jpg" alt="Horno Empotrable Midea 70 Litros Inox" class="product-img">
+        <h3 class="product-title">Horno Empotrable Midea 70 Litros Inox</h3>
+        <div class="price-installment">18 x Gs. 229.000</div>
+        <div class="price-cash">Contado PYG 2.549.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Horno%20Empotrable%20Midea%2070%20Litros%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/microondas-electrolux-20-litros-mtd20-blanco-microondas-electrolux-20-litros-mtd20-blanco.jpg" alt="Microondas Electrolux 20 Litros MTD20 Blanco" class="product-img">
+        <h3 class="product-title">Microondas Electrolux 20 Litros MTD20 Blanco</h3>
+        <div class="price-installment">18 x Gs. 79.000</div>
+        <div class="price-cash">Contado PYG 879.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Microondas%20Electrolux%2020%20Litros%20MTD20%20Blanco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/microondas-electrolux-30-litros-meo30-inox-microondas-electrolux-30-litros-meo30-inox.jpg" alt="Microondas Electrolux 30 Litros MEO30 Inox" class="product-img">
+        <h3 class="product-title">Microondas Electrolux 30 Litros MEO30 Inox</h3>
+        <div class="price-installment">18 x Gs. 119.000</div>
+        <div class="price-cash">Contado PYG 1.329.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Microondas%20Electrolux%2030%20Litros%20MEO30%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/microondas-midea-20-litros-blanco-microondas-midea-20-litros-blanco.jpg" alt="Microondas Midea 20 Litros Blanco" class="product-img">
+        <h3 class="product-title">Microondas Midea 20 Litros Blanco</h3>
+        <div class="price-installment">18 x Gs. 69.000</div>
+        <div class="price-cash">Contado PYG 769.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Microondas%20Midea%2020%20Litros%20Blanco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/microondas-midea-28-litros-inox-microondas-midea-28-litros-inox.jpg" alt="Microondas Midea 28 Litros Inox" class="product-img">
+        <h3 class="product-title">Microondas Midea 28 Litros Inox</h3>
+        <div class="price-installment">18 x Gs. 99.000</div>
+        <div class="price-cash">Contado PYG 1.099.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Microondas%20Midea%2028%20Litros%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/microondas-samsung-28-litros-inox-microondas-samsung-28-litros-inox.jpg" alt="Microondas Samsung 28 Litros Inox" class="product-img">
+        <h3 class="product-title">Microondas Samsung 28 Litros Inox</h3>
+        <div class="price-installment">18 x Gs. 109.000</div>
+        <div class="price-cash">Contado PYG 1.219.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Microondas%20Samsung%2028%20Litros%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/microondas-whirlpool-30-litros-inox-microondas-whirlpool-30-litros-inox.jpg" alt="Microondas Whirlpool 30 Litros Inox" class="product-img">
+        <h3 class="product-title">Microondas Whirlpool 30 Litros Inox</h3>
+        <div class="price-installment">18 x Gs. 119.000</div>
+        <div class="price-cash">Contado PYG 1.329.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Microondas%20Whirlpool%2030%20Litros%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/horno-electrico-whirlpool-45-litros-con-grill-horno-electrico-whirlpool-45-litros-con-grill.jpg" alt="Horno Eléctrico Whirlpool 45 Litros con Grill" class="product-img">
+        <h3 class="product-title">Horno Eléctrico Whirlpool 45 Litros con Grill</h3>
+        <div class="price-installment">18 x Gs. 139.000</div>
+        <div class="price-cash">Contado PYG 1.549.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Horno%20El%C3%A9ctrico%20Whirlpool%2045%20Litros%20con%20Grill" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/horno-electrico-samsung-35-litros-con-grill-horno-electrico-samsung-35-litros-con-grill.jpg" alt="Horno Eléctrico Samsung 35 Litros con Grill" class="product-img">
+        <h3 class="product-title">Horno Eléctrico Samsung 35 Litros con Grill</h3>
+        <div class="price-installment">18 x Gs. 99.000</div>
+        <div class="price-cash">Contado PYG 1.099.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Horno%20El%C3%A9ctrico%20Samsung%2035%20Litros%20con%20Grill" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/microondas-electrolux-23-litros-negro-microondas-electrolux-23-litros-negro.jpg" alt="Microondas Electrolux 23 Litros Negro" class="product-img">
+        <h3 class="product-title">Microondas Electrolux 23 Litros Negro</h3>
+        <div class="price-installment">18 x Gs. 89.000</div>
+        <div class="price-cash">Contado PYG 999.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Microondas%20Electrolux%2023%20Litros%20Negro" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/horno-empotrable-whirlpool-70-litros-inox-horno-empotrable-whirlpool-70-litros-inox.jpg" alt="Horno Empotrable Whirlpool 70 Litros Inox" class="product-img">
+        <h3 class="product-title">Horno Empotrable Whirlpool 70 Litros Inox</h3>
+        <div class="price-installment">18 x Gs. 259.000</div>
+        <div class="price-cash">Contado PYG 2.889.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Horno%20Empotrable%20Whirlpool%2070%20Litros%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/horno-electrico-consul-45-litros-con-grill-horno-electrico-consul-45-litros-con-grill.jpg" alt="Horno Eléctrico Consul 45 Litros con Grill" class="product-img">
+        <h3 class="product-title">Horno Eléctrico Consul 45 Litros con Grill</h3>
+        <div class="price-installment">18 x Gs. 109.000</div>
+        <div class="price-cash">Contado PYG 1.219.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Horno%20El%C3%A9ctrico%20Consul%2045%20Litros%20con%20Grill" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/microondas-lg-28-litros-inox-microondas-lg-28-litros-inox.jpg" alt="Microondas LG 28 Litros Inox" class="product-img">
+        <h3 class="product-title">Microondas LG 28 Litros Inox</h3>
+        <div class="price-installment">18 x Gs. 119.000</div>
+        <div class="price-cash">Contado PYG 1.329.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Microondas%20LG%2028%20Litros%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/horno-electrico-midea-60-litros-con-grill-horno-electrico-midea-60-litros-con-grill.jpg" alt="Horno Eléctrico Midea 60 Litros con Grill" class="product-img">
+        <h3 class="product-title">Horno Eléctrico Midea 60 Litros con Grill</h3>
+        <div class="price-installment">18 x Gs. 139.000</div>
+        <div class="price-cash">Contado PYG 1.549.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Horno%20El%C3%A9ctrico%20Midea%2060%20Litros%20con%20Grill" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/microondas-midea-32-litros-inox-microondas-midea-32-litros-inox.jpg" alt="Microondas Midea 32 Litros Inox" class="product-img">
+        <h3 class="product-title">Microondas Midea 32 Litros Inox</h3>
+        <div class="price-installment">18 x Gs. 129.000</div>
+        <div class="price-cash">Contado PYG 1.439.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Microondas%20Midea%2032%20Litros%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+    
+</div> <!-- cierra HORNOS -->
+
+<!-- ============ CATEGORÍA: HELADERAS ============ -->
+<h2 class="cat-title" data-cat="heladera">🧊 HELADERAS</h2>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-300-litros-frio-humedo-2-puertas-silver-heladera-midea-300-litros-frio-humedo-2-puertas-silver.jpg" alt="Heladera Midea 300 Litros Frio Húmedo 2 Puertas Silver" class="product-img">
+        <h3 class="product-title">Heladera Midea 300 Litros Frio Húmedo 2 Puertas Silver</h3>
+        <div class="price-installment">18 x Gs. 159.000</div>
+        <div class="price-cash">Contado PYG 1.759.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20300%20Litros%20Frio%20H%C3%BAmedo%202%20Puertas%20Silver" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-361-litros-inox-frio-seco-2-puertas-crm39-blanco.jpg" alt="Heladera Consul 361 Litros Inox Frio Seco 2 Puertas CRM39 - Blanco" class="product-img">
+        <h3 class="product-title">Heladera Consul 361 Litros Inox Frio Seco 2 Puertas CRM39 - Blanco</h3>
+        <div class="price-installment">18 x Gs. 289.000</div>
+        <div class="price-cash">Contado PYG 3.059.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20361%20Litros%20Inox%20Frio%20Seco%202%20Puertas%20CRM39%20-%20Blanco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/frigobar-whirlpool-vintage-wra08bvd-76-litros-negro-frigobar-whirlpool-vintage-wra08bvd-76-litros-negro.jpg" alt="Frigobar Whirlpool Vintage WRA08BVD 76 Litros Negro" class="product-img">
+        <h3 class="product-title">Frigobar Whirlpool Vintage WRA08BVD 76 Litros Negro</h3>
+        <div class="price-installment">18 x Gs. 299.000</div>
+        <div class="price-cash">Contado PYG 3.439.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Frigobar%20Whirlpool%20Vintage%20WRA08BVD%2076%20Litros%20Negro" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-samsung-564-litros-side-by-side-silver-rs57dg4000m9zs-heladera-samsung-564-litros-side-by-side-silver-rs57dg4000m9zs.jpg" alt="Heladera Samsung 564 Litros Side By Side Silver RS57DG4000M9ZS" class="product-img">
+        <h3 class="product-title">Heladera Samsung 564 Litros Side By Side Silver RS57DG4000M9ZS</h3>
+        <div class="price-installment">18 x Gs. 629.000</div>
+        <div class="price-cash">Contado PYG 7.299.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Samsung%20564%20Litros%20Side%20By%20Side%20Silver%20RS57DG4000M9ZS" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-whirlpool-374-399-litros-wrm44hk-evox-heladera-whirlpool-374-399-litros-wrm44hk-evox.jpg" alt="Heladera Whirlpool 374/399 Litros WRM44HK Evox" class="product-img">
+        <h3 class="product-title">Heladera Whirlpool 374/399 Litros WRM44HK Evox</h3>
+        <div class="price-installment">18 x Gs. 279.000</div>
+        <div class="price-cash">Contado PYG 3.439.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Whirlpool%20374%2F399%20Litros%20WRM44HK%20Evox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-110-litros-2-puertas-energia-clase-a-heladera-midea-110-litros-2-puertas-energia-clase-a.jpg" alt="Heladera Midea 110 Litros 2 Puertas Energia Clase A" class="product-img">
+        <h3 class="product-title">Heladera Midea 110 Litros 2 Puertas Energia Clase A</h3>
+        <div class="price-installment">18 x Gs. 99.000</div>
+        <div class="price-cash">Contado PYG 1.229.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20110%20Litros%202%20Puertas%20Energia%20Clase%20A" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-479-litros-frio-seco-2-puertas-con-panel-touch-crm56-blanco.jpg" alt="Heladera Consul 479 Litros Frio Seco 2 Puertas con Panel Touch CRM56 - Blanco" class="product-img">
+        <h3 class="product-title">Heladera Consul 479 Litros Frio Seco 2 Puertas con Panel Touch CRM56 - Blanco</h3>
+        <div class="price-installment">18 x Gs. 499.000</div>
+        <div class="price-cash">Contado PYG 5.499.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20479%20Litros%20Frio%20Seco%202%20Puertas%20con%20Panel%20Touch%20CRM56%20-%20Blanco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-300-litros-frio-humedo-2-puertas-blanco-mdrt294fgg01-heladera-midea-300-litros-frio-humedo-2-puertas-blanco-mdrt294fgg01.jpg" alt="Heladera Midea 300 Litros Frio Húmedo 2 Puertas Blanco MDRT294FGG01" class="product-img">
+        <h3 class="product-title">Heladera Midea 300 Litros Frio Húmedo 2 Puertas Blanco MDRT294FGG01</h3>
+        <div class="price-installment">18 x Gs. 129.000</div>
+        <div class="price-cash">Contado PYG 1.419.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20300%20Litros%20Frio%20H%C3%BAmedo%202%20Puertas%20Blanco%20MDRT294FGG01" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-whirlpool-535-510-litros-negro-inverter-wrm62ae-heladera-whirlpool-535-510-litros-negro-inverter-wrm62ae.jpg" alt="Heladera Whirlpool 535/510 Litros Negro Inverter WRM62AE" class="product-img">
+        <h3 class="product-title">Heladera Whirlpool 535/510 Litros Negro Inverter WRM62AE</h3>
+        <div class="price-installment">18 x Gs. 499.000</div>
+        <div class="price-cash">Contado PYG 5.584.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Whirlpool%20535%2F510%20Litros%20Negro%20Inverter%20WRM62AE" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-438-litros-frio-seco-2-puertas-crm50-inox.jpg" alt="Heladera Consul 438 Litros Frio Seco 2 Puertas CRM50 - Inox" class="product-img">
+        <h3 class="product-title">Heladera Consul 438 Litros Frio Seco 2 Puertas CRM50 - Inox</h3>
+        <div class="price-installment">18 x Gs. 429.000</div>
+        <div class="price-cash">Contado PYG 5.149.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20438%20Litros%20Frio%20Seco%202%20Puertas%20CRM50%20-%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-500-litros-frio-seco-2-puertas-heladera-midea-500-litros-frio-seco-2-puertas.jpg" alt="Heladera Midea 500 Litros Frio Seco 2 Puertas" class="product-img">
+        <h3 class="product-title">Heladera Midea 500 Litros Frio Seco 2 Puertas</h3>
+        <div class="price-installment">18 x Gs. 359.000</div>
+        <div class="price-cash">Contado PYG 4.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20500%20Litros%20Frio%20Seco%202%20Puertas" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-300-litros-frio-humedo-2-puertas-negro-mdrt294fgg28-heladera-midea-300-litros-frio-humedo-2-puertas-negro-mdrt294fgg28.jpg" alt="Heladera Midea 300 Litros Frio Húmedo 2 Puertas Negro MDRT294FGG28" class="product-img">
+        <h3 class="product-title">Heladera Midea 300 Litros Frio Húmedo 2 Puertas Negro MDRT294FGG28</h3>
+        <div class="price-installment">18 x Gs. 159.000</div>
+        <div class="price-cash">Contado PYG 1.759.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20300%20Litros%20Frio%20H%C3%BAmedo%202%20Puertas%20Negro%20MDRT294FGG28" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-400-litros-frio-seco-2-puertas-con-dispenser-inox-heladera-midea-400-litros-frio-seco-2-puertas-con-dispenser-inox.jpg" alt="Heladera Midea 400 Litros Frio Seco 2 Puertas con Dispenser Inox" class="product-img">
+        <h3 class="product-title">Heladera Midea 400 Litros Frio Seco 2 Puertas con Dispenser Inox</h3>
+        <div class="price-installment">18 x Gs. 309.000</div>
+        <div class="price-cash">Contado PYG 3.489.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20400%20Litros%20Frio%20Seco%202%20Puertas%20con%20Dispenser%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-whirlpool-120-litros-compartimiento-extra-frio-1puerta-heladera-whirlpool-120-litros-compartimiento-extra-frio-1puerta.jpg" alt="Heladera Whirlpool 120 Litros Compartimiento Extra Frio 1 Puerta" class="product-img">
+        <h3 class="product-title">Heladera Whirlpool 120 Litros Compartimiento Extra Frio 1 Puerta</h3>
+        <div class="price-installment">18 x Gs. 199.000</div>
+        <div class="price-cash">Contado PYG 2.229.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Whirlpool%20120%20Litros%20Compartimiento%20Extra%20Frio%201%20Puerta" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-whirlpool-593-554-litros-inox-inverter-wro85mk-heladera-whirlpool-593-554-litros-inox-inverter-wro85mk.jpg" alt="Heladera Whirlpool 593/554 Litros Inox Inverter WRO85MK" class="product-img">
+        <h3 class="product-title">Heladera Whirlpool 593/554 Litros Inox Inverter WRO85MK</h3>
+        <div class="price-installment">18 x Gs. 849.000</div>
+        <div class="price-cash">Contado PYG 9.399.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Whirlpool%20593%2F554%20Litros%20Inox%20Inverter%20WRO85MK" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-samsung-699-litros-rf29db9950qdzs-heladera-samsung-699-litros-rf29db9950qdzs.jpg" alt="Heladera Samsung 699 Litros RF29DB9950QDZS" class="product-img">
+        <h3 class="product-title">Heladera Samsung 699 Litros RF29DB9950QDZS</h3>
+        <div class="price-installment">18 x Gs. 2.359.000</div>
+        <div class="price-cash">Contado PYG 26.469.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Samsung%20699%20Litros%20RF29DB9950QDZS" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-whirlpool-530-499-litros-inox-inverter-wre66ak-heladera-whirlpool-530-499-litros-inox-inverter-wre66ak.jpg" alt="Heladera Whirlpool 530/499 Litros Inox Inverter WRE66AK" class="product-img">
+        <h3 class="product-title">Heladera Whirlpool 530/499 Litros Inox Inverter WRE66AK</h3>
+        <div class="price-installment">18 x Gs. 739.000</div>
+        <div class="price-cash">Contado PYG 7.949.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Whirlpool%20530%2F499%20Litros%20Inox%20Inverter%20WRE66AK" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-crm40-361-litros-2-puertas-frio-seco-inox-heladera-consul-crm40-361-litros-2-puertas-frio-seco-inox.jpg" alt="Heladera Consul CRM40 361 Litros 2 Puertas Frio Seco Inox" class="product-img">
+        <h3 class="product-title">Heladera Consul CRM40 361 Litros 2 Puertas Frio Seco Inox</h3>
+        <div class="price-installment">18 x Gs. 279.000</div>
+        <div class="price-cash">Contado PYG 3.259.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20CRM40%20361%20Litros%202%20Puertas%20Frio%20Seco%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-whirlpool-403-383-litros-inox-frio-seco-wrm46mk-heladera-whirlpool-403-383-litros-inox-frio-seco-wrm46mk.jpg" alt="Heladera Whirlpool 403/383 Litros Inox Frio Seco WRM46MK" class="product-img">
+        <h3 class="product-title">Heladera Whirlpool 403/383 Litros Inox Frio Seco WRM46MK</h3>
+        <div class="price-installment">18 x Gs. 339.000</div>
+        <div class="price-cash">Contado PYG 3.539.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Whirlpool%20403%2F383%20Litros%20Inox%20Frio%20Seco%20WRM46MK" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-523-litros-frio-seco-inverter-inox-mdrt650fg-heladera-midea-523-litros-frio-seco-inverter-inox-mdrt650fg.jpg" alt="Heladera Midea 523 Litros Frio Seco Inverter Inox MDRT650FG" class="product-img">
+        <h3 class="product-title">Heladera Midea 523 Litros Frio Seco Inverter Inox MDRT650FG</h3>
+        <div class="price-installment">18 x Gs. 349.000</div>
+        <div class="price-cash">Contado PYG 3.859.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20523%20Litros%20Frio%20Seco%20Inverter%20Inox%20MDRT650FG" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-samsung-french-door-495l-ai-bespoke-black-heladera-samsung-french-door-495l-ai-bespoke-black.jpg" alt="Heladera Samsung French Door 495L AI Bespoke Black" class="product-img">
+        <h3 class="product-title">Heladera Samsung French Door 495L AI Bespoke Black</h3>
+        <div class="price-installment">18 x Gs. 819.000</div>
+        <div class="price-cash">Contado PYG 9.189.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Samsung%20French%20Door%20495L%20AI%20Bespoke%20Black" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-505-litros-frio-seco-inverter-inox-mdrt611fg-heladera-midea-505-litros-frio-seco-inverter-inox-mdrt611fg.jpg" alt="Heladera Midea 505 Litros Frio Seco Inverter Inox MDRT611FG" class="product-img">
+        <h3 class="product-title">Heladera Midea 505 Litros Frio Seco Inverter Inox MDRT611FG</h3>
+        <div class="price-installment">18 x Gs. 319.000</div>
+        <div class="price-cash">Contado PYG 3.899.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20505%20Litros%20Frio%20Seco%20Inverter%20Inox%20MDRT611FG" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-electrolux-488-litros-f-s-inverter-ib55s-heladera-electrolux-488-litros-f-s-inverter-ib55s.jpg" alt="Heladera Electrolux 488 Litros F/S Inverter IB55S" class="product-img">
+        <h3 class="product-title">Heladera Electrolux 488 Litros F/S Inverter IB55S</h3>
+        <div class="price-installment">18 x Gs. 789.000</div>
+        <div class="price-cash">Contado PYG 8.809.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Electrolux%20488%20Litros%20F%2FS%20Inverter%20IB55S" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-479-litros-inox-frio-seco-2-puertas-con-panel-touch-crm56-heladera-consul-479-litros-inox-frio-seco-2-puertas-con-panel-touch-crm56.jpg" alt="Heladera Consul 479 Litros Inox Frio Seco 2 Puertas con Panel Touch CRM56" class="product-img">
+        <h3 class="product-title">Heladera Consul 479 Litros Inox Frio Seco 2 Puertas con Panel Touch CRM56</h3>
+        <div class="price-installment">18 x Gs. 459.000</div>
+        <div class="price-cash">Contado PYG 5.489.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20479%20Litros%20Inox%20Frio%20Seco%202%20Puertas%20con%20Panel%20Touch%20CRM56" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-electrolux-400-litros-frio-seco-inverter-inox-ib44s-heladera-electrolux-400-litros-frio-seco-inverter-inox-ib44s.jpg" alt="Heladera Electrolux 400 Litros Frio Seco Inverter Inox IB44S" class="product-img">
+        <h3 class="product-title">Heladera Electrolux 400 Litros Frio Seco Inverter Inox IB44S</h3>
+        <div class="price-installment">18 x Gs. 679.000</div>
+        <div class="price-cash">Contado PYG 7.829.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Electrolux%20400%20Litros%20Frio%20Seco%20Inverter%20Inox%20IB44S" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+    
+          <div class="product-card">
+        <img loading="lazy" src="img/heladera-electrolux-f-s-538-litros-inverter-inoxidable-im8s-heladera-electrolux-f-s-538-litros-inverter-inoxidable-im8s.jpg" alt="Heladera Electrolux F/S 538 Litros Inverter Inoxidable IM8S" class="product-img">
+        <h3 class="product-title">Heladera Electrolux F/S 538 Litros Inverter Inoxidable IM8S</h3>
+        <div class="price-installment">18 x Gs. 859.000</div>
+        <div class="price-cash">Contado PYG 9.029.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Electrolux%20F%2FS%20538%20Litros%20Inverter%20Inoxidable%20IM8S" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-side-by-side-460-litros-inverter-frio-seco-con-msmarthome-negro-heladera-midea-side-by-side-460-litros-inverter-frio-seco-con-msmarthome-negro.jpg" alt="Heladera Midea Side By Side 460 Litros Inverter Frio Seco con MSmartHome Negro" class="product-img">
+        <h3 class="product-title">Heladera Midea Side By Side 460 Litros Inverter Frio Seco con MSmartHome Negro</h3>
+        <div class="price-installment">18 x Gs. 399.000</div>
+        <div class="price-cash">Contado PYG 4.779.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20Side%20By%20Side%20460%20Litros%20Inverter%20Frio%20Seco%20con%20MSmartHome%20Negro" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-electrolux-311litros-frio-humedo-2p-ertm45f5hpw-heladera-electrolux-311litros-frio-humedo-2p-ertm45f5hpw.jpg" alt="Heladera Electrolux 311 Litros Frio Húmedo 2P ERTM45F5HPW" class="product-img">
+        <h3 class="product-title">Heladera Electrolux 311 Litros Frio Húmedo 2P ERTM45F5HPW</h3>
+        <div class="price-installment">18 x Gs. 259.000</div>
+        <div class="price-cash">Contado PYG 2.879.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Electrolux%20311%20Litros%20Frio%20H%C3%BAmedo%202P%20ERTM45F5HPW" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-samsung-345-litros-spacemax-silver-rt35cg5420s9zs-heladera-samsung-345-litros-spacemax-silver-rt35cg5420s9zs.jpg" alt="Heladera Samsung 345 Litros SpaceMax Silver RT35CG5420S9ZS" class="product-img">
+        <h3 class="product-title">Heladera Samsung 345 Litros SpaceMax Silver RT35CG5420S9ZS</h3>
+        <div class="price-installment">18 x Gs. 319.000</div>
+        <div class="price-cash">Contado PYG 3.569.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Samsung%20345%20Litros%20SpaceMax%20Silver%20RT35CG5420S9ZS" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-electrolux-205-lt-frio-humedo-erty20g5hvw-2-puertas-heladera-electrolux-205-lt-frio-humedo-erty20g5hvw-2-puertas.jpg" alt="Heladera Electrolux 205 Lt Frio Húmedo ERTY20G5HVW 2 Puertas" class="product-img">
+        <h3 class="product-title">Heladera Electrolux 205 Lt Frio Húmedo ERTY20G5HVW 2 Puertas</h3>
+        <div class="price-installment">18 x Gs. 159.000</div>
+        <div class="price-cash">Contado PYG 1.669.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Electrolux%20205%20Lt%20Frio%20H%C3%BAmedo%20ERTY20G5HVW%202%20Puertas" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-samsung-391-litros-space-max-all-around-cooling-heladera-samsung-391-litros-space-max-all-around-cooling.jpg" alt="Heladera Samsung 391 Litros Space Max All-Around Cooling" class="product-img">
+        <h3 class="product-title">Heladera Samsung 391 Litros Space Max All-Around Cooling</h3>
+        <div class="price-installment">18 x Gs. 309.000</div>
+        <div class="price-cash">Contado PYG 3.399.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Samsung%20391%20Litros%20Space%20Max%20All-Around%20Cooling" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-mod-300-litros-blanco-frio-seco-0512mdrt307mt-heladera-midea-mod-300-litros-blanco-frio-seco-0512mdrt307mt.jpg" alt="Heladera Midea Mod. 300 Litros Blanco Frio Seco 0512MDRT307MT" class="product-img">
+        <h3 class="product-title">Heladera Midea Mod. 300 Litros Blanco Frio Seco 0512MDRT307MT</h3>
+        <div class="price-installment">18 x Gs. 199.000</div>
+        <div class="price-cash">Contado PYG 2.179.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20Mod.%20300%20Litros%20Blanco%20Frio%20Seco%200512MDRT307MT" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-blanco-338-litros-frio-seco-mdrt489fgg01-heladera-midea-blanco-338-litros-frio-seco-mdrt489fgg01.jpg" alt="Heladera Midea Blanco 338 Litros Frio Seco MDRT489FGG01" class="product-img">
+        <h3 class="product-title">Heladera Midea Blanco 338 Litros Frio Seco MDRT489FGG01</h3>
+        <div class="price-installment">18 x Gs. 289.000</div>
+        <div class="price-cash">Contado PYG 3.139.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20Blanco%20338%20Litros%20Frio%20Seco%20MDRT489FGG01" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-samsung-345l-spacemax-silver-rt35cg5420s9zs-g.jpg" alt="Heladera Samsung 345L SpaceMax Silver RT35CG5420S9ZS-G" class="product-img">
+        <h3 class="product-title">Heladera Samsung 345L SpaceMax Silver RT35CG5420S9ZS-G</h3>
+        <div class="price-installment">18 x Gs. 399.000</div>
+        <div class="price-cash">Contado PYG 4.699.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Samsung%20345L%20SpaceMax%20Silver%20RT35CG5420S9ZS-G" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-whirlpool-side-by-side-wrs955fdwx-518-litros-inox-inverter-frio-seco-heladera-whirlpool-side-by-side-wrs955fdwx-518-litros-inox-inverter-frio-seco.jpg" alt="Heladera Whirlpool Side By Side WRS955FDWX 518 Litros Inox Inverter Frio Seco" class="product-img">
+        <h3 class="product-title">Heladera Whirlpool Side By Side WRS955FDWX 518 Litros Inox Inverter Frio Seco</h3>
+        <div class="price-installment">18 x Gs. 859.000</div>
+        <div class="price-cash">Contado PYG 9.809.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Whirlpool%20Side%20By%20Side%20WRS955FDWX%20518%20Litros%20Inox%20Inverter%20Frio%20Seco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-side-by-side-spacemax-716-litros-rs27t5200s9-ey-heladera-side-by-side-spacemax-716-litros-rs27t5200s9-ey.jpg" alt="Heladera Side By Side SpaceMax 716 Litros RS27T5200S9-EY" class="product-img">
+        <h3 class="product-title">Heladera Side By Side SpaceMax 716 Litros RS27T5200S9-EY</h3>
+        <div class="price-installment">18 x Gs. 1.099.000</div>
+        <div class="price-cash">Contado PYG 11.969.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Side%20By%20Side%20SpaceMax%20716%20Litros%20RS27T5200S9-EY" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-samsung-side-by-side-de-585-litros-family-hub-rs58t561b1-zs-2-puertas-heladera-samsung-side-by-side-de-585-litros-family-hub-rs58t561b1-zs-2-puertas.jpg" alt="Heladera Samsung Side By Side de 585 Litros Family Hub RS58T561B1-ZS 2 Puertas" class="product-img">
+        <h3 class="product-title">Heladera Samsung Side By Side de 585 Litros Family Hub RS58T561B1-ZS 2 Puertas</h3>
+        <div class="price-installment">18 x Gs. 1.569.000</div>
+        <div class="price-cash">Contado PYG 17.449.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Samsung%20Side%20By%20Side%20de%20585%20Litros%20Family%20Hub%20RS58T561B1-ZS%202%20Puertas" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-110-litros-2-puertas-frio-humedo-vidrio-templado-heladera-midea-110-litros-2-puertas-frio-humedo-vidrio-templado.jpg" alt="Heladera Midea 110 Litros 2 Puertas Frio Húmedo Vidrio Templado" class="product-img">
+        <h3 class="product-title">Heladera Midea 110 Litros 2 Puertas Frio Húmedo Vidrio Templado</h3>
+        <div class="price-installment">18 x Gs. 109.000</div>
+        <div class="price-cash">Contado PYG 1.219.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20110%20Litros%202%20Puertas%20Frio%20H%C3%BAmedo%20Vidrio%20Templado" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-407-litros-inox-frio-seco-2-puertas-crm44-heladera-consul-407-litros-inox-frio-seco-2-puertas-crm44.jpg" alt="Heladera Consul 407 Litros Inox Frio Seco 2 Puertas CRM44" class="product-img">
+        <h3 class="product-title">Heladera Consul 407 Litros Inox Frio Seco 2 Puertas CRM44</h3>
+        <div class="price-installment">18 x Gs. 349.000</div>
+        <div class="price-cash">Contado PYG 3.719.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20407%20Litros%20Inox%20Frio%20Seco%202%20Puertas%20CRM44" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-407-litros-blanco-frio-seco-2-puertas-crm44-heladera-consul-407-litros-blanco-frio-seco-2-puertas-crm44.jpg" alt="Heladera Consul 407 Litros Blanco Frio Seco 2 Puertas CRM44" class="product-img">
+        <h3 class="product-title">Heladera Consul 407 Litros Blanco Frio Seco 2 Puertas CRM44</h3>
+        <div class="price-installment">18 x Gs. 349.000</div>
+        <div class="price-cash">Contado PYG 3.799.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20407%20Litros%20Blanco%20Frio%20Seco%202%20Puertas%20CRM44" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-inox-428-litros-frio-seco-inverter-con-panel-touch-cre44-heladera-consul-inox-428-litros-frio-seco-inverter-con-panel-touch-cre44.jpg" alt="Heladera Consul Inox 428 Litros Frio Seco Inverter con Panel Touch CRE44" class="product-img">
+        <h3 class="product-title">Heladera Consul Inox 428 Litros Frio Seco Inverter con Panel Touch CRE44</h3>
+        <div class="price-installment">18 x Gs. 539.000</div>
+        <div class="price-cash">Contado PYG 5.859.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20Inox%20428%20Litros%20Frio%20Seco%20Inverter%20con%20Panel%20Touch%20CRE44" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-electrolux-2p-f-h-252-litros-ertm28g5-ertm28g5hrw-heladera-electrolux-2p-f-h-252-litros-ertm28g5-ertm28g5hrw.jpg" alt="Heladera Electrolux 2P F/H 252 Litros ERTM28G5 ERTM28G5HRW" class="product-img">
+        <h3 class="product-title">Heladera Electrolux 2P F/H 252 Litros ERTM28G5 ERTM28G5HRW</h3>
+        <div class="price-installment">18 x Gs. 209.000</div>
+        <div class="price-cash">Contado PYG 2.329.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Electrolux%202P%20F%2FH%20252%20Litros%20ERTM28G5%20ERTM28G5HRW" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-electrolux-371-litros-frio-seco-turbo-freezer-dfx43-heladera-electrolux-371-litros-frio-seco-turbo-freezer-dfx43.jpg" alt="Heladera Electrolux 371 Litros Frio Seco Turbo Freezer DFX43" class="product-img">
+        <h3 class="product-title">Heladera Electrolux 371 Litros Frio Seco Turbo Freezer DFX43</h3>
+        <div class="price-installment">18 x Gs. 289.000</div>
+        <div class="price-cash">Contado PYG 3.349.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Electrolux%20371%20Litros%20Frio%20Seco%20Turbo%20Freezer%20DFX43" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-whirlpool-french-door-inverter-564-540-litros-evox-frio-seco-heladera-whirlpool-french-door-inverter-564-540-litros-evox-frio-seco.jpg" alt="Heladera Whirlpool French Door Inverter 564/540 Litros Evox Frio Seco" class="product-img">
+        <h3 class="product-title">Heladera Whirlpool French Door Inverter 564/540 Litros Evox Frio Seco</h3>
+        <div class="price-installment">18 x Gs. 839.000</div>
+        <div class="price-cash">Contado PYG 9.279.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Whirlpool%20French%20Door%20Inverter%20564%2F540%20Litros%20Evox%20Frio%20Seco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-275-litros-frio-humedo-1-puerta-crc30-heladera-consul-275-litros-frio-humedo-1-puerta-crc30.jpg" alt="Heladera Consul 275 Litros Frio Húmedo 1 Puerta CRC30" class="product-img">
+        <h3 class="product-title">Heladera Consul 275 Litros Frio Húmedo 1 Puerta CRC30</h3>
+        <div class="price-installment">18 x Gs. 179.000</div>
+        <div class="price-cash">Contado PYG 2.049.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20275%20Litros%20Frio%20H%C3%BAmedo%201%20Puerta%20CRC30" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-121-litros-1-puerta-compartimiento-multiuso-heladera-consul-121-litros-1-puerta-compartimiento-multiuso.jpg" alt="Heladera Consul 121 Litros 1 Puerta Compartimiento Multiuso" class="product-img">
+        <h3 class="product-title">Heladera Consul 121 Litros 1 Puerta Compartimiento Multiuso</h3>
+        <div class="price-installment">18 x Gs. 179.000</div>
+        <div class="price-cash">Contado PYG 1.949.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20121%20Litros%201%20Puerta%20Compartimiento%20Multiuso" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-110-litros-2-puertas-energia-clase-a-1-heladera-midea-110-litros-2-puertas-energia-clase-a-1.jpg" alt="Heladera Midea 110 Litros 2 Puertas Energia Clase A+" class="product-img">
+        <h3 class="product-title">Heladera Midea 110 Litros 2 Puertas Energia Clase A+</h3>
+        <div class="price-installment">18 x Gs. 99.000</div>
+        <div class="price-cash">Contado PYG 1.149.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20110%20Litros%202%20Puertas%20Energia%20Clase%20A%2B" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-336-litros-frio-humedo-2-puertas-crd37-blanco.jpg" alt="Heladera Consul 336 Litros Frio Húmedo 2 Puertas CRD37 - Blanco" class="product-img">
+        <h3 class="product-title">Heladera Consul 336 Litros Frio Húmedo 2 Puertas CRD37 - Blanco</h3>
+        <div class="price-installment">18 x Gs. 269.000</div>
+        <div class="price-cash">Contado PYG 2.979.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20336%20Litros%20Frio%20H%C3%BAmedo%202%20Puertas%20CRD37%20-%20Blanco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+    
+</div> <!-- cierra HELADERAS grid anterior, seguimos en misma categoría -->
+
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-361-litros-crm39-inox-heladera-consul-361-litros-crm39-inox.jpg" alt="Heladera Consul 361 Litros CRM39 Inox" class="product-img">
+        <h3 class="product-title">Heladera Consul 361 Litros CRM39 Inox</h3>
+        <div class="price-installment">18 x Gs. 299.000</div>
+        <div class="price-cash">Contado PYG 3.299.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20361%20Litros%20CRM39%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-340-litros-frio-seco-inox-heladera-midea-340-litros-frio-seco-inox.jpg" alt="Heladera Midea 340 Litros Frio Seco Inox" class="product-img">
+        <h3 class="product-title">Heladera Midea 340 Litros Frio Seco Inox</h3>
+        <div class="price-installment">18 x Gs. 279.000</div>
+        <div class="price-cash">Contado PYG 3.099.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20340%20Litros%20Frio%20Seco%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-electrolux-400-litros-ib44b-blanca-heladera-electrolux-400-litros-ib44b-blanca.jpg" alt="Heladera Electrolux 400 Litros IB44B Blanca" class="product-img">
+        <h3 class="product-title">Heladera Electrolux 400 Litros IB44B Blanca</h3>
+        <div class="price-installment">18 x Gs. 639.000</div>
+        <div class="price-cash">Contado PYG 7.399.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Electrolux%20400%20Litros%20IB44B%20Blanca" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-whirlpool-450-litros-wrm50-inox-heladera-whirlpool-450-litros-wrm50-inox.jpg" alt="Heladera Whirlpool 450 Litros WRM50 Inox" class="product-img">
+        <h3 class="product-title">Heladera Whirlpool 450 Litros WRM50 Inox</h3>
+        <div class="price-installment">18 x Gs. 419.000</div>
+        <div class="price-cash">Contado PYG 4.699.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Whirlpool%20450%20Litros%20WRM50%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-samsung-420-litros-rt42-inox-heladera-samsung-420-litros-rt42-inox.jpg" alt="Heladera Samsung 420 Litros RT42 Inox" class="product-img">
+        <h3 class="product-title">Heladera Samsung 420 Litros RT42 Inox</h3>
+        <div class="price-installment">18 x Gs. 399.000</div>
+        <div class="price-cash">Contado PYG 4.499.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Samsung%20420%20Litros%20RT42%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-340-litros-crd37-inox-heladera-consul-340-litros-crd37-inox.jpg" alt="Heladera Consul 340 Litros CRD37 Inox" class="product-img">
+        <h3 class="product-title">Heladera Consul 340 Litros CRD37 Inox</h3>
+        <div class="price-installment">18 x Gs. 279.000</div>
+        <div class="price-cash">Contado PYG 3.099.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20340%20Litros%20CRD37%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-280-litros-frio-humedo-blanco-heladera-midea-280-litros-frio-humedo-blanco.jpg" alt="Heladera Midea 280 Litros Frio Húmedo Blanco" class="product-img">
+        <h3 class="product-title">Heladera Midea 280 Litros Frio Húmedo Blanco</h3>
+        <div class="price-installment">18 x Gs. 149.000</div>
+        <div class="price-cash">Contado PYG 1.649.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20280%20Litros%20Frio%20H%C3%BAmedo%20Blanco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-electrolux-350-litros-dfx39-inox-heladera-electrolux-350-litros-dfx39-inox.jpg" alt="Heladera Electrolux 350 Litros Frio Seco DFX39 Inox" class="product-img">
+        <h3 class="product-title">Heladera Electrolux 350 Litros Frio Seco DFX39 Inox</h3>
+        <div class="price-installment">18 x Gs. 279.000</div>
+        <div class="price-cash">Contado PYG 3.099.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Electrolux%20350%20Litros%20Frio%20Seco%20DFX39%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-whirlpool-380-litros-wrm44-inox-heladera-whirlpool-380-litros-wrm44-inox.jpg" alt="Heladera Whirlpool 380 Litros WRM44 Inox" class="product-img">
+        <h3 class="product-title">Heladera Whirlpool 380 Litros WRM44 Inox</h3>
+        <div class="price-installment">18 x Gs. 299.000</div>
+        <div class="price-cash">Contado PYG 3.299.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Whirlpool%20380%20Litros%20WRM44%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-samsung-360-litros-rt36-inox-heladera-samsung-360-litros-rt36-inox.jpg" alt="Heladera Samsung 360 Litros RT36 Inox" class="product-img">
+        <h3 class="product-title">Heladera Samsung 360 Litros RT36 Inox</h3>
+        <div class="price-installment">18 x Gs. 329.000</div>
+        <div class="price-cash">Contado PYG 3.699.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Samsung%20360%20Litros%20RT36%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-300-litros-crd30-blanco-heladera-consul-300-litros-crd30-blanco.jpg" alt="Heladera Consul 300 Litros CRD30 Blanco" class="product-img">
+        <h3 class="product-title">Heladera Consul 300 Litros CRD30 Blanco</h3>
+        <div class="price-installment">18 x Gs. 239.000</div>
+        <div class="price-cash">Contado PYG 2.649.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20300%20Litros%20CRD30%20Blanco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-450-litros-frio-seco-inox-heladera-midea-450-litros-frio-seco-inox.jpg" alt="Heladera Midea 450 Litros Frio Seco Inox" class="product-img">
+        <h3 class="product-title">Heladera Midea 450 Litros Frio Seco Inox</h3>
+        <div class="price-installment">18 x Gs. 329.000</div>
+        <div class="price-cash">Contado PYG 3.699.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20450%20Litros%20Frio%20Seco%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-electrolux-420-litros-ib44s-inox-heladera-electrolux-420-litros-ib44s-inox.jpg" alt="Heladera Electrolux 420 Litros IB44S Inox" class="product-img">
+        <h3 class="product-title">Heladera Electrolux 420 Litros IB44S Inox</h3>
+        <div class="price-installment">18 x Gs. 699.000</div>
+        <div class="price-cash">Contado PYG 7.999.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Electrolux%20420%20Litros%20IB44S%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-whirlpool-520-litros-wrm62-inox-heladera-whirlpool-520-litros-wrm62-inox.jpg" alt="Heladera Whirlpool 520 Litros WRM62 Inox" class="product-img">
+        <h3 class="product-title">Heladera Whirlpool 520 Litros WRM62 Inox</h3>
+        <div class="price-installment">18 x Gs. 479.000</div>
+        <div class="price-cash">Contado PYG 5.399.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Whirlpool%20520%20Litros%20WRM62%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-samsung-500-litros-rt50-inox-heladera-samsung-500-litros-rt50-inox.jpg" alt="Heladera Samsung 500 Litros RT50 Inox" class="product-img">
+        <h3 class="product-title">Heladera Samsung 500 Litros RT50 Inox</h3>
+        <div class="price-installment">18 x Gs. 459.000</div>
+        <div class="price-cash">Contado PYG 5.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Samsung%20500%20Litros%20RT50%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-400-litros-crm44-blanco-heladera-consul-400-litros-crm44-blanco.jpg" alt="Heladera Consul 400 Litros CRM44 Blanco" class="product-img">
+        <h3 class="product-title">Heladera Consul 400 Litros CRM44 Blanco</h3>
+        <div class="price-installment">18 x Gs. 339.000</div>
+        <div class="price-cash">Contado PYG 3.799.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20400%20Litros%20CRM44%20Blanco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-380-litros-frio-seco-blanco-heladera-midea-380-litros-frio-seco-blanco.jpg" alt="Heladera Midea 380 Litros Frio Seco Blanco" class="product-img">
+        <h3 class="product-title">Heladera Midea 380 Litros Frio Seco Blanco</h3>
+        <div class="price-installment">18 x Gs. 259.000</div>
+        <div class="price-cash">Contado PYG 2.899.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20380%20Litros%20Frio%20Seco%20Blanco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-electrolux-460-litros-ib50-inox-heladera-electrolux-460-litros-ib50-inox.jpg" alt="Heladera Electrolux 460 Litros IB50 Inox" class="product-img">
+        <h3 class="product-title">Heladera Electrolux 460 Litros IB50 Inox</h3>
+        <div class="price-installment">18 x Gs. 749.000</div>
+        <div class="price-cash">Contado PYG 8.499.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Electrolux%20460%20Litros%20IB50%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-whirlpool-340-litros-wrm44hk-blanco-heladera-whirlpool-340-litros-wrm44hk-blanco.jpg" alt="Heladera Whirlpool 340 Litros WRM44HK Blanco" class="product-img">
+        <h3 class="product-title">Heladera Whirlpool 340 Litros WRM44HK Blanco</h3>
+        <div class="price-installment">18 x Gs. 259.000</div>
+        <div class="price-cash">Contado PYG 2.899.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Whirlpool%20340%20Litros%20WRM44HK%20Blanco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-samsung-390-litros-rt39-inox-heladera-samsung-390-litros-rt39-inox.jpg" alt="Heladera Samsung 390 Litros RT39 Inox" class="product-img">
+        <h3 class="product-title">Heladera Samsung 390 Litros RT39 Inox</h3>
+        <div class="price-installment">18 x Gs. 349.000</div>
+        <div class="price-cash">Contado PYG 3.899.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Samsung%20390%20Litros%20RT39%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-consul-440-litros-crm50-blanco-heladera-consul-440-litros-crm50-blanco.jpg" alt="Heladera Consul 440 Litros CRM50 Blanco" class="product-img">
+        <h3 class="product-title">Heladera Consul 440 Litros CRM50 Blanco</h3>
+        <div class="price-installment">18 x Gs. 399.000</div>
+        <div class="price-cash">Contado PYG 4.499.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Consul%20440%20Litros%20CRM50%20Blanco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-320-litros-frio-seco-negro-heladera-midea-320-litros-frio-seco-negro.jpg" alt="Heladera Midea 320 Litros Frio Seco Negro" class="product-img">
+        <h3 class="product-title">Heladera Midea 320 Litros Frio Seco Negro</h3>
+        <div class="price-installment">18 x Gs. 229.000</div>
+        <div class="price-cash">Contado PYG 2.549.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20320%20Litros%20Frio%20Seco%20Negro" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-electrolux-310-litros-ertm45-blanco-heladera-electrolux-310-litros-ertm45-blanco.jpg" alt="Heladera Electrolux 310 Litros ERTM45 Blanco" class="product-img">
+        <h3 class="product-title">Heladera Electrolux 310 Litros ERTM45 Blanco</h3>
+        <div class="price-installment">18 x Gs. 249.000</div>
+        <div class="price-cash">Contado PYG 2.799.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Electrolux%20310%20Litros%20ERTM45%20Blanco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-whirlpool-480-litros-wrm55-inox-heladera-whirlpool-480-litros-wrm55-inox.jpg" alt="Heladera Whirlpool 480 Litros WRM55 Inox" class="product-img">
+        <h3 class="product-title">Heladera Whirlpool 480 Litros WRM55 Inox</h3>
+        <div class="price-installment">18 x Gs. 439.000</div>
+        <div class="price-cash">Contado PYG 4.999.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Whirlpool%20480%20Litros%20WRM55%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-samsung-450-litros-rt45-inox-heladera-samsung-450-litros-rt45-inox.jpg" alt="Heladera Samsung 450 Litros RT45 Inox" class="product-img">
+        <h3 class="product-title">Heladera Samsung 450 Litros RT45 Inox</h3>
+        <div class="price-installment">18 x Gs. 419.000</div>
+        <div class="price-cash">Contado PYG 4.699.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Samsung%20450%20Litros%20RT45%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+</div>
+
+<!-- ============ CATEGORÍA: CONGELADORES Y FREEZERS ============ -->
+<h2 class="cat-title" data-cat="congelador">❄️ CONGELADORES Y FREEZERS</h2>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/congelador-vertical-consul-276-litros-blanco-frio-seco-cvg28-congelador-vertical-consul-276-litros-blanco-frio-seco-cvg28.jpg" alt="Congelador Vertical Consul 276 Litros Blanco Frio Seco CVC28" class="product-img">
+        <h3 class="product-title">Congelador Vertical Consul 276 Litros Blanco Frio Seco CVC28</h3>
+        <div class="price-installment">18 x Gs. 399.000</div>
+        <div class="price-cash">Contado PYG 4.419.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20Vertical%20Consul%20276%20Litros%20Blanco%20Frio%20Seco%20CVC28" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/congelador-horizontal-consul-311-litros-1-tapa-doble-accion-cha31-congelador-horizontal-consul-311-litros-1-tapa-doble-accion-cha31.jpg" alt="Congelador Horizontal Consul 311 Litros 1 Tapa Doble Acción CHA31" class="product-img">
+        <h3 class="product-title">Congelador Horizontal Consul 311 Litros 1 Tapa Doble Acción CHA31</h3>
+        <div class="price-installment">18 x Gs. 259.000</div>
+        <div class="price-cash">Contado PYG 2.939.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20Horizontal%20Consul%20311%20Litros%201%20Tapa%20Doble%20Acci%C3%B3n%20CHA31" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/congelador-para-helados-midea-254-litros-2-puertas-congelador-para-helados-midea-254-litros-2-puertas.jpg" alt="Congelador para Helados Midea 254 Litros 2 Puertas" class="product-img">
+        <h3 class="product-title">Congelador para Helados Midea 254 Litros 2 Puertas</h3>
+        <div class="price-installment">18 x Gs. 279.000</div>
+        <div class="price-cash">Contado PYG 3.209.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20para%20Helados%20Midea%20254%20Litros%202%20Puertas" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/freezer-midea-210-litros-1-puerta-vertical-frio-humedo-freezer-midea-210-litros-1-puerta-vertical-frio-humedo.jpg" alt="Freezer Midea 210 Litros 1 Puerta Vertical Frio Húmedo" class="product-img">
+        <h3 class="product-title">Freezer Midea 210 Litros 1 Puerta Vertical Frio Húmedo</h3>
+        <div class="price-installment">18 x Gs. 189.000</div>
+        <div class="price-cash">Contado PYG 2.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Freezer%20Midea%20210%20Litros%201%20Puerta%20Vertical%20Frio%20H%C3%BAmedo" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/congelador-electrolux-513-litros-inverter-hi550-congelador-electrolux-513-litros-inverter-hi550.jpg" alt="Congelador Electrolux 513 Litros Inverter HIS50" class="product-img">
+        <h3 class="product-title">Congelador Electrolux 513 Litros Inverter HIS50</h3>
+        <div class="price-installment">18 x Gs. 359.000</div>
+        <div class="price-cash">Contado PYG 3.789.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20Electrolux%20513%20Litros%20Inverter%20HIS50" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/congelador-midea-142-litros-inverter-mdrc206fzg01-congelador-midea-142-litros-inverter-mdrc206fzg01.jpg" alt="Congelador Midea 142 Litros Inverter MDRC206FZG01" class="product-img">
+        <h3 class="product-title">Congelador Midea 142 Litros Inverter MDRC206FZG01</h3>
+        <div class="price-installment">18 x Gs. 119.000</div>
+        <div class="price-cash">Contado PYG 1.289.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20Midea%20142%20Litros%20Inverter%20MDRC206FZG01" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/congelador-midea-mod-120-inverter-0513mdrc153fz-congelador-midea-mod-120-inverter-0513mdrc153fz.jpg" alt="Congelador Midea Mod 120 Inverter 0513MDRC153FZ" class="product-img">
+        <h3 class="product-title">Congelador Midea Mod 120 Inverter 0513MDRC153FZ</h3>
+        <div class="price-installment">18 x Gs. 99.000</div>
+        <div class="price-cash">Contado PYG 1.049.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20Midea%20Mod%20120%20Inverter%200513MDRC153FZ" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/congelador-horizontal-consul-221-litros-1-tapa-doble-accion-cha22-congelador-horizontal-consul-221-litros-1-tapa-doble-accion-cha22.jpg" alt="Congelador Horizontal Consul 221 Litros 1 Tapa Doble Acción CHA22" class="product-img">
+        <h3 class="product-title">Congelador Horizontal Consul 221 Litros 1 Tapa Doble Acción CHA22</h3>
+        <div class="price-installment">18 x Gs. 269.000</div>
+        <div class="price-cash">Contado PYG 2.579.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20Horizontal%20Consul%20221%20Litros%201%20Tapa%20Doble%20Acci%C3%B3n%20CHA22" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/congelador-horizontal-consul-530-litros-doble-accion-congelador-horizontal-consul-530-litros-doble-accion.jpg" alt="Congelador Horizontal Consul 530 Litros Doble Acción" class="product-img">
+        <h3 class="product-title">Congelador Horizontal Consul 530 Litros Doble Acción</h3>
+        <div class="price-installment">18 x Gs. 369.000</div>
+        <div class="price-cash">Contado PYG 4.179.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20Horizontal%20Consul%20530%20Litros%20Doble%20Acci%C3%B3n" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/congelador-midea-220-litros-inverter-mdrc280fz-congelador-midea-220-litros-inverter-mdrc280fz.jpg" alt="Congelador Midea 220 Litros Inverter MDRC280FZ" class="product-img">
+        <h3 class="product-title">Congelador Midea 220 Litros Inverter MDRC280FZ</h3>
+        <div class="price-installment">18 x Gs. 129.000</div>
+        <div class="price-cash">Contado PYG 1.669.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20Midea%20220%20Litros%20Inverter%20MDRC280FZ" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+    
+          <div class="product-card">
+        <img loading="lazy" src="img/congelador-vertical-electrolux-180-litros-frio-seco-congelador-vertical-electrolux-180-litros-frio-seco.jpg" alt="Congelador Vertical Electrolux 180 Litros Frio Seco" class="product-img">
+        <h3 class="product-title">Congelador Vertical Electrolux 180 Litros Frio Seco</h3>
+        <div class="price-installment">18 x Gs. 289.000</div>
+        <div class="price-cash">Contado PYG 3.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20Vertical%20Electrolux%20180%20Litros%20Frio%20Seco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/congelador-horizontal-midea-300-litros-doble-accion-congelador-horizontal-midea-300-litros-doble-accion.jpg" alt="Congelador Horizontal Midea 300 Litros Doble Acción" class="product-img">
+        <h3 class="product-title">Congelador Horizontal Midea 300 Litros Doble Acción</h3>
+        <div class="price-installment">18 x Gs. 229.000</div>
+        <div class="price-cash">Contado PYG 2.549.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20Horizontal%20Midea%20300%20Litros%20Doble%20Acci%C3%B3n" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/congelador-horizontal-midea-450-litros-doble-accion-congelador-horizontal-midea-450-litros-doble-accion.jpg" alt="Congelador Horizontal Midea 450 Litros Doble Acción" class="product-img">
+        <h3 class="product-title">Congelador Horizontal Midea 450 Litros Doble Acción</h3>
+        <div class="price-installment">18 x Gs. 289.000</div>
+        <div class="price-cash">Contado PYG 3.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20Horizontal%20Midea%20450%20Litros%20Doble%20Acci%C3%B3n" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/freezer-vertical-midea-160-litros-frio-seco-freezer-vertical-midea-160-litros-frio-seco.jpg" alt="Freezer Vertical Midea 160 Litros Frio Seco" class="product-img">
+        <h3 class="product-title">Freezer Vertical Midea 160 Litros Frio Seco</h3>
+        <div class="price-installment">18 x Gs. 199.000</div>
+        <div class="price-cash">Contado PYG 2.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Freezer%20Vertical%20Midea%20160%20Litros%20Frio%20Seco" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/congelador-consul-410-litros-2-tapas-doble-accion-congelador-consul-410-litros-2-tapas-doble-accion.jpg" alt="Congelador Consul 410 Litros 2 Tapas Doble Acción" class="product-img">
+        <h3 class="product-title">Congelador Consul 410 Litros 2 Tapas Doble Acción</h3>
+        <div class="price-installment">18 x Gs. 329.000</div>
+        <div class="price-cash">Contado PYG 3.699.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20Consul%20410%20Litros%202%20Tapas%20Doble%20Acci%C3%B3n" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+</div> <!-- cierra CONGELADORES -->
+
+<!-- ============ CATEGORÍA: BEBEDEROS ============ -->
+<h2 class="cat-title" data-cat="bebedero">💧 BEBEDEROS</h2>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/bebedero-midea-2-canillas-agua-fria-caliente-bebedero-midea-2-canillas-agua-fria-caliente.jpg" alt="Bebedero Midea 2 Canillas Agua Fría y Caliente" class="product-img">
+        <h3 class="product-title">Bebedero Midea 2 Canillas Agua Fría y Caliente</h3>
+        <div class="price-installment">18 x Gs. 69.000</div>
+        <div class="price-cash">Contado PYG 769.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Bebedero%20Midea%202%20Canillas%20Agua%20Fr%C3%ADa%20y%20Caliente" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/bebedero-electrolux-2-canillas-agua-fria-caliente-inox-bebedero-electrolux-2-canillas-agua-fria-caliente-inox.jpg" alt="Bebedero Electrolux 2 Canillas Agua Fría y Caliente Inox" class="product-img">
+        <h3 class="product-title">Bebedero Electrolux 2 Canillas Agua Fría y Caliente Inox</h3>
+        <div class="price-installment">18 x Gs. 89.000</div>
+        <div class="price-cash">Contado PYG 999.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Bebedero%20Electrolux%202%20Canillas%20Agua%20Fr%C3%ADa%20y%20Caliente%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/bebedero-consul-2-canillas-agua-fria-caliente-bebedero-consul-2-canillas-agua-fria-caliente.jpg" alt="Bebedero Consul 2 Canillas Agua Fría y Caliente" class="product-img">
+        <h3 class="product-title">Bebedero Consul 2 Canillas Agua Fría y Caliente</h3>
+        <div class="price-installment">18 x Gs. 79.000</div>
+        <div class="price-cash">Contado PYG 879.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Bebedero%20Consul%202%20Canillas%20Agua%20Fr%C3%ADa%20y%20Caliente" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/bebedero-midea-3-canillas-agua-fria-caliente-natural-bebedero-midea-3-canillas-agua-fria-caliente-natural.jpg" alt="Bebedero Midea 3 Canillas Agua Fría Caliente y Natural" class="product-img">
+        <h3 class="product-title">Bebedero Midea 3 Canillas Agua Fría Caliente y Natural</h3>
+        <div class="price-installment">18 x Gs. 89.000</div>
+        <div class="price-cash">Contado PYG 999.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Bebedero%20Midea%203%20Canillas%20Agua%20Fr%C3%ADa%20Caliente%20y%20Natural" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/bebedero-whirlpool-2-canillas-agua-fria-caliente-bebedero-whirlpool-2-canillas-agua-fria-caliente.jpg" alt="Bebedero Whirlpool 2 Canillas Agua Fría y Caliente" class="product-img">
+        <h3 class="product-title">Bebedero Whirlpool 2 Canillas Agua Fría y Caliente</h3>
+        <div class="price-installment">18 x Gs. 99.000</div>
+        <div class="price-cash">Contado PYG 1.099.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Bebedero%20Whirlpool%202%20Canillas%20Agua%20Fr%C3%ADa%20y%20Caliente" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/bebedero-de-mesa-midea-2-canillas-bebedero-de-mesa-midea-2-canillas.jpg" alt="Bebedero de Mesa Midea 2 Canillas" class="product-img">
+        <h3 class="product-title">Bebedero de Mesa Midea 2 Canillas</h3>
+        <div class="price-installment">18 x Gs. 49.000</div>
+        <div class="price-cash">Contado PYG 549.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Bebedero%20de%20Mesa%20Midea%202%20Canillas" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/dispenser-de-agua-electrolux-con-compresor-dispenser-de-agua-electrolux-con-compresor.jpg" alt="Dispenser de Agua Electrolux con Compresor" class="product-img">
+        <h3 class="product-title">Dispenser de Agua Electrolux con Compresor</h3>
+        <div class="price-installment">18 x Gs. 119.000</div>
+        <div class="price-cash">Contado PYG 1.329.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Dispenser%20de%20Agua%20Electrolux%20con%20Compresor" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/bebedero-industrial-inox-2-canillas-100-litros-bebedero-industrial-inox-2-canillas-100-litros.jpg" alt="Bebedero Industrial Inox 2 Canillas 100 Litros" class="product-img">
+        <h3 class="product-title">Bebedero Industrial Inox 2 Canillas 100 Litros</h3>
+        <div class="price-installment">18 x Gs. 299.000</div>
+        <div class="price-cash">Contado PYG 3.299.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Bebedero%20Industrial%20Inox%202%20Canillas%20100%20Litros" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+</div>
+
+<!-- ============ CATEGORÍA: WINE / VISICOOLER ============ -->
+<h2 class="cat-title" data-cat="wine">🍷 WINE COOLER / VISICOOLER</h2>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/wine-cooler-electrolux-33-botellas-inox-wine-cooler-electrolux-33-botellas-inox.jpg" alt="Wine Cooler Electrolux 33 Botellas Inox" class="product-img">
+        <h3 class="product-title">Wine Cooler Electrolux 33 Botellas Inox</h3>
+        <div class="price-installment">18 x Gs. 189.000</div>
+        <div class="price-cash">Contado PYG 2.099.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Wine%20Cooler%20Electrolux%2033%20Botellas%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/visicooler-midea-340-litros-1-puerta-vidrio-visicooler-midea-340-litros-1-puerta-vidrio.jpg" alt="Visicooler Midea 340 Litros 1 Puerta Vidrio" class="product-img">
+        <h3 class="product-title">Visicooler Midea 340 Litros 1 Puerta Vidrio</h3>
+        <div class="price-installment">18 x Gs. 349.000</div>
+        <div class="price-cash">Contado PYG 3.899.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Visicooler%20Midea%20340%20Litros%201%20Puerta%20Vidrio" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/visicooler-consul-400-litros-1-puerta-vidrio-visicooler-consul-400-litros-1-puerta-vidrio.jpg" alt="Visicooler Consul 400 Litros 1 Puerta Vidrio" class="product-img">
+        <h3 class="product-title">Visicooler Consul 400 Litros 1 Puerta Vidrio</h3>
+        <div class="price-installment">18 x Gs. 399.000</div>
+        <div class="price-cash">Contado PYG 4.499.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Visicooler%20Consul%20400%20Litros%201%20Puerta%20Vidrio" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/wine-cooler-midea-24-botellas-negro-wine-cooler-midea-24-botellas-negro.jpg" alt="Wine Cooler Midea 24 Botellas Negro" class="product-img">
+        <h3 class="product-title">Wine Cooler Midea 24 Botellas Negro</h3>
+        <div class="price-installment">18 x Gs. 149.000</div>
+        <div class="price-cash">Contado PYG 1.659.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Wine%20Cooler%20Midea%2024%20Botellas%20Negro" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/visicooler-electrolux-450-litros-2-puertas-vidrio-visicooler-electrolux-450-litros-2-puertas-vidrio.jpg" alt="Visicooler Electrolux 450 Litros 2 Puertas Vidrio" class="product-img">
+        <h3 class="product-title">Visicooler Electrolux 450 Litros 2 Puertas Vidrio</h3>
+        <div class="price-installment">18 x Gs. 459.000</div>
+        <div class="price-cash">Contado PYG 5.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Visicooler%20Electrolux%20450%20Litros%202%20Puertas%20Vidrio" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/cervejera-electrolux-96-litros-inox-cervejera-electrolux-96-litros-inox.jpg" alt="Cervejera Electrolux 96 Litros Inox" class="product-img">
+        <h3 class="product-title">Cervejera Electrolux 96 Litros Inox</h3>
+        <div class="price-installment">18 x Gs. 219.000</div>
+        <div class="price-cash">Contado PYG 2.449.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Cervejera%20Electrolux%2096%20Litros%20Inox" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/cervejera-midea-120-litros-negro-cervejera-midea-120-litros-negro.jpg" alt="Cervejera Midea 120 Litros Negro" class="product-img">
+        <h3 class="product-title">Cervejera Midea 120 Litros Negro</h3>
+        <div class="price-installment">18 x Gs. 199.000</div>
+        <div class="price-cash">Contado PYG 2.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Cervejera%20Midea%20120%20Litros%20Negro" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/visicooler-midea-220-litros-1-puerta-vidrio-visicooler-midea-220-litros-1-puerta-vidrio.jpg" alt="Visicooler Midea 220 Litros 1 Puerta Vidrio" class="product-img">
+        <h3 class="product-title">Visicooler Midea 220 Litros 1 Puerta Vidrio</h3>
+        <div class="price-installment">18 x Gs. 279.000</div>
+        <div class="price-cash">Contado PYG 3.099.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Visicooler%20Midea%20220%20Litros%201%20Puerta%20Vidrio" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+</div>
+
+<div id="noResult" class="no-result">😔 No se encontraron productos con ese nombre.<br>Probá con otra palabra.</div>
+</main>
+
+<a href="https://wa.me/595987331833?text=Hola,%20quiero%20consultar%20por%20el%20cat%C3%A1logo%20completo" class="chat-float" target="_blank">💬<span>1</span></a>
+
+<script>
+function filtrarProductos(){
+  var q=document.getElementById('searchInput').value.toLowerCase();
+  var cards=document.querySelectorAll('.product-card');
+  var found=0;
+  cards.forEach(function(c){
+    var t=c.querySelector('.product-title').innerText.toLowerCase();
+    var show=t.includes(q);
+    c.style.display=show?'flex':'none';
+    if(show) found++;
+  });
+  document.querySelectorAll('.cat-title').forEach(function(h){ h.style.display=q?'none':''; });
+  document.getElementById('noResult').style.display=found===0?'block':'none';
+}
+function filtrarCat(cat,btn){
+  document.querySelectorAll('#cats button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('searchInput').value='';
+  document.getElementById('noResult').style.display='none';
+  document.querySelectorAll('.product-card').forEach(c=>c.style.display='flex');
+  if(cat==='todo'){
+    document.querySelectorAll('.cat-title, .products-grid').forEach(e=>e.style.display='');
+    return;
+  }
+  document.querySelectorAll('.cat-title').forEach(h=>{
+    var show=h.dataset.cat===cat;
+    h.style.display=show?'':'none';
+    var grid=h.nextElementSibling;
+    if(grid && grid.classList.contains('products-grid')) grid.style.display=show?'grid':'none';
+  });
+  // para HELADERAS que tiene 2 grids seguidos, mostrar el segundo también
+  if(cat==='heladera'){
+    var titles=document.querySelectorAll('.cat-title');
+    titles.forEach(h=>{
+      if(h.dataset.cat==='heladera'){
+        var n=h.nextElementSibling;
+        while(n && !n.classList.contains('cat-title')){
+          if(n.classList.contains('products-grid')) n.style.display='grid';
+          n=n.nextElementSibling;
+        }
+      }
+    });
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
