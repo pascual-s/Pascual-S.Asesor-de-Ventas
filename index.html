@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="google-site-verification" content="0vfWm3KIKwMhdlnl6nYLejKQR08VbFOzYGprA18rm6A" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pascual S. Asesor de Ventas (Bristol SA)</title>
+  <style>
+    *{ box-sizing: border-box; }
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* === GRID UNIFICADO - 2 EN CELULAR, 3 EN PC === */
+    .products-grid,
+    .product-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto 30px auto;
+      padding: 5px;
+      justify-content: center;
+    }
+    .product-card{
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+    @media (max-width: 900px){
+      .products-grid, .product-grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px){
+      .products-grid, .product-grid{ grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .product-card{ padding: 10px; }
+      .product-img{ height: 130px; }
+      body{ padding: 10px; }
+    }
+
+    /* === ENCABEZADOS POR CATEGORIA === */
+    .category-separator{
+      max-width: 1200px;
+      margin: 40px auto 15px auto;
+      padding: 20px 15px;
+      text-align: center;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+    }
+    .category-title{ margin: 0; font-size: 1.5rem; letter-spacing: 1px; color: #25d366; }
+    .category-subtitle{ margin: 6px 0 0 0; color: #a0a0a0; font-size: 0.85rem; }
+    .subcategory-title{
+      max-width: 1200px;
+      margin: 30px auto 15px auto;
+      text-align: left;
+      font-size: 1.1rem;
+      padding-left: 5px;
+      border-left: 4px solid #25d366;
+      padding: 5px 0 5px 10px;
+    }
+
+    /* Menu rapido de categorias */
+    .cat-nav{
+      max-width: 1200px;
+      margin: 15px auto 25px auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .cat-nav a{
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid #333;
+      background: #1a1a1a;
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+
+    /* Encabezado */
+    .header-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #2a2a2a;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+    .profile-img {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .header-text { display: flex; flex-direction: column; }
+    .header-text h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+      line-height: 1.3;
+      color: #ffffff;
+    }
+    .header-text p {
+      font-size: 0.82rem;
+      color: #a0a0a0;
+      margin: 0;
+      line-height: 1.4;
+    }
+    .content-area {
+      max-width: 1200px;
+      margin: 25px auto 0 auto;
+      padding: 0 10px;
+    }
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #333333;
+      color: #cccccc;
+      padding: 12px 16px;
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #1a1a1a;
+    }
+    .product-img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      background-color: #ffffff;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .product-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #ffffff;
+      margin: 10px 0;
+      min-height: 40px;
+    }
+    .price-installment {
+      font-weight: bold;
+      color: #25d366;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+    .price-cash {
+      color: #aaaaaa;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+    }
+    .product-btn { justify-content: center; padding: 10px; }
+  </style>
+</head>
+<body>
+
+  <header class="header-container">
+    <img src="img/IMG_1937.png" alt="Pascual S. Asesor de Ventas" class="profile-img">
+    <div class="header-text">
+      <h1>Pascual S. Asesor de Ventas (Bristol SA)</h1>
+      <p>Electrodomésticos, tecnología y mucho más.</p>
+    </div>
+  </header>
+
+  <main class="content-area">
+    <a href="https://wa.me/595987331833" class="btn-whatsapp" target="_blank">
+      <span>CONSULTAR POR WHATSAPP</span>
+      <span>&rarr;</span>
+    </a>
+
+    <hr style="border: 0; border-top: 1px solid #333333; margin: 30px 0;">
+
+    <!-- Campo de búsqueda -->
+    <div style="max-width: 600px; margin: 15px auto 20px auto;">
+      <input 
+        type="text" 
+        id="searchInput" 
+        onkeyup="filtrarProductos()" 
+        placeholder="Buscar producto..." 
+        style="width: 100%; padding: 12px 16px; border-radius: 6px; border: 1px solid #333; background-color: #1a1a1a; color: #ffffff; font-size: 0.9rem; box-sizing: border-box; outline: none;"
+      >
+    </div>
+
+    <!-- MENU RAPIDO POR CATEGORIA -->
+    <nav class="cat-nav">
+      <a href="#climatizacion">CLIMATIZACIÓN</a>
+      <a href="#cocina">COCINA</a>
+      <a href="#refrigeracion">REFRIGERACIÓN</a>
+      <a href="#lavado">LAVADO Y HOGAR</a>
+      <a href="#tecnologia">TECNOLOGÍA Y TV</a>
+      <a href="#celulares">CELULARES</a>
+      <a href="#muebles">MUEBLES</a>
+    </nav>
+
+    <!-- ================= CLIMATIZACIÓN ================= -->
+<section class="category-separator" id="climatizacion">
+  <h2 class="category-title">CLIMATIZACIÓN</h2>
+  <p class="category-subtitle">Ventiladores • Aires Acondicionados</p>
+</section>
+
+<h3 class="subcategory-title">Ventiladores</h3>
+<div class="products-grid">
+
+      <!-- Ventilador Wahson -->
+      <div class="product-card">
+        <img loading="lazy" src="img/ventilador-wahson-de-techo-56-motor-pesado-7-velocidades-ventilador-wahson-de-techo-56-motor-pesado-7-velocidades.webp" alt="Ventilador Wahson De Techo 56 motor pesado 7 velocidades" class="product-img">
+        <h3 class="product-title">Ventilador Wahson De Techo 56" motor pesado 7 velocidades</h3>
+        <div class="price-installment">18 x Gs. 39.000</div>
+        <div class="price-cash">Contado PYG 429.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Ventilador%20Wahson%20De%20Techo" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <!-- Ventilador Tokyo Pesado -->
+      <div class="product-card">
+        <img loading="lazy" src="img/ventilador-de-techo-tokyo-56-pesado-5v-ventilador-de-techo-tokyo-56-pesado-5v.webp" alt="Ventilador De Techo Tokyo 56 Pesado 5V" class="product-img">
+        <h3 class="product-title">Ventilador De Techo Tokyo 56 Pesado 5V</h3>
+        <div class="price-installment">18 x Gs. 29.000</div>
+        <div class="price-cash">Contado PYG 219.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Ventilador%20De%20Techo%20Tokyo" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <!-- Ventilador Tokyo Liviano -->
+      <div class="product-card">
+        <img loading="lazy" src="img/ventilador-tokyo-de-techo-56-liviano-5-velocidades-blanco-ventilador-tokyo-de-techo-56-liviano-5-velocidades-blanco.webp" alt="Ventilador Tokyo de techo 56 liviano 5 velocidades blanco" class="product-img">
+        <h3 class="product-title">Ventilador Tokyo de techo 56" liviano 5 velocidades blanco</h3>
+        <div class="price-installment">18 x Gs. 19.000</div>
+        <div class="price-cash">Contado PYG 179.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Ventilador%20Tokyo%20de%20techo%2056" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+</div>
+
+<h3 class="subcategory-title">Aires Acondicionados</h3>
+<div class="products-grid">
+
+      <!-- Aire Comfee 12000 -->
+      <div class="product-card">
+        <img loading="lazy" src="img/aire-acondicionado-split-comfee-12000-btu-r32-frio-calor-aire-acondicionado-split-comfee-12000-btu-r32-frio-calor.webp" alt="Aire Acondicionado Split Comfee 12000 BTU R32 Frío/Calor" class="product-img">
+        <h3 class="product-title">Aire Acondicionado Split Comfee 12000 BTU R32 Frío/Calor</h3>
+        <div class="price-installment">18 x Gs. 169.000</div>
+        <div class="price-cash">Contado PYG 1.689.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Aire%20Acondicionado%20Split%20Comfee" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <!-- Aire Midea 12000 -->
+      <div class="product-card">
+        <img loading="lazy" src="img/aire-acondicionado-split-midea-12000-btu-r32-frio-calor-aire-acondicionado-split-midea-12000-btu-r32-frio-calor.webp" alt="Aire Acondicionado Split Midea 12000 BTU R32 Frío/Calor" class="product-img">
+        <h3 class="product-title">Aire Acondicionado Split Midea 12000 BTU R32 Frío/Calor</h3>
+        <div class="price-installment">18 x Gs. 179.000</div>
+        <div class="price-cash">Contado PYG 1.849.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Aire%20Acondicionado%20Split%20Midea%2012000%20BTU" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <!-- Aire Carrier 12000 Ecologico -->
+      <div class="product-card">
+        <img loading="lazy" src="img/aire-acondicionado-split-carrier-12000-btu-ecologico-frio-calor-aire-acondicionado-split-carrier-12000-btu-ecologico-frio-calor.webp" alt="Aire Acondicionado Split Carrier 12000 BTU Ecológico Frío/Calor" class="product-img">
+        <h3 class="product-title">Aire Acondicionado Split Carrier 12000 BTU Ecológico Frío/Calor</h3>
+        <div class="price-installment">18 x Gs. 199.000</div>
+        <div class="price-cash">Contado PYG 1.959.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Aire%20Acondicionado%20Split%20Carrier%2012000%20BTU" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <!-- Aire Midea EcoMaster -->
+      <div class="product-card">
+        <img loading="lazy" src="img/aire-acondicionado-split-midea-12000-btu-r32-inverter-ecomaster-aire-acondicionado-split-midea-12000-btu-r32-inverter-ecomaster.webp" alt="Aire Acondicionado Split Midea 12000 BTU R32 Inverter EcoMaster" class="product-img">
+        <h3 class="product-title">Aire Acondicionado Split Midea 12000 BTU R32 Inverter EcoMaster</h3>
+        <div class="price-installment">18 x Gs. 219.000</div>
+        <div class="price-cash">Contado PYG 2.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Aire%20Acondicionado%20Split%20Midea%2012000%20BTU%20EcoMaster" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <!-- Aire Carrier Inverter 12000 -->
+      <div class="product-card">
+        <img loading="lazy" src="img/aire-acondicionado-split-carrier-inverter-12000-btu-aire-acondicionado-split-carrier-inverter-12000-btu.webp" alt="Aire Acondicionado Split Carrier Inverter 12000 BTU" class="product-img">
+        <h3 class="product-title">Aire Acondicionado Split Carrier Inverter 12000 BTU</h3>
+        <div class="price-installment">18 x Gs. 269.000</div>
+        <div class="price-cash">Contado PYG 2.859.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Aire%20Acondicionado%20Split%20Carrier%20Inverter%2012000" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <!-- Aire Carrier 18000 -->
+      <div class="product-card">
+        <img loading="lazy" src="img/aire-acondicionado-split-carrier-18-000-btu-frio-calor-r32-aire-acondicionado-split-carrier-18-000-btu-frio-calor-r32.webp" alt="Aire Acondicionado Split Carrier 18.000 BTU Frío/Calor R32" class="product-img">
+        <h3 class="product-title">Aire Acondicionado Split Carrier 18.000 BTU Frío/Calor R32</h3>
+        <div class="price-installment">18 x Gs. 319.000</div>
+        <div class="price-cash">Contado PYG 3.399.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Aire%20Acondicionado%20Split%20Carrier%2018.000%20BTU" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <!-- Aire Carrier 24000 -->
+      <div class="product-card">
+        <img loading="lazy" src="img/aire-acondicionado-split-carrier-24-000-btu-frio-calor-r32-aire-acondicionado-split-carrier-24-000-btu-frio-calor-r32.webp" alt="Aire Acondicionado Split Carrier 24.000 BTU Frío/Calor R32" class="product-img">
+        <h3 class="product-title">Aire Acondicionado Split Carrier 24.000 BTU Frío/Calor R32</h3>
+        <div class="price-installment">18 x Gs. 419.000</div>
+        <div class="price-cash">Contado PYG 4.629.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Aire%20Acondicionado%20Split%20Carrier%2024.000%20BTU" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+</div>
+
+    <!-- ================= COCINA ================= -->
+<section class="category-separator" id="cocina">
+  <h2 class="category-title">COCINA</h2>
+  <p class="category-subtitle">Microondas • Placas • Licuadoras • Pequeños Electrodomésticos</p>
+</section>
+
+<h3 class="subcategory-title">Microondas</h3>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/microondas-midea-analogico-20-litros-blanco-microondas-midea-analogico-20-litros-blanco.webp" alt="Microondas Midea Analógico 20 Litros Blanco" class="product-img">
+        <h3 class="product-title">Microondas Midea Analógico 20 Litros Blanco</h3>
+        <div class="price-installment">18 x Gs. 39.000</div>
+        <div class="price-cash">Contado PYG 399.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Microondas%20Midea" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/microondas-midea-20-lt-negro-espejado-0510mm020cmoe-microondas-midea-20-lt-negro-espejado-0510mm020cmoe.webp" alt="Microondas Midea 20 Lt Negro Espejado" class="product-img">
+        <h3 class="product-title">Microondas Midea 20 Lt Negro Espejado 0510MM020CMOE</h3>
+        <div class="price-installment">18 x Gs. 49.000</div>
+        <div class="price-cash">Contado PYG 539.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Microondas%20Midea%2020%20Lt%20Negro%20Espejado" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/microondas-midea-28-litros-negro-espejado-0510mmop03moe-microondas-midea-28-litros-negro-espejado-0510mmop03moe.webp" alt="Microondas Midea 28 litros Negro Espejado 0510MMOP03MOE" class="product-img">
+        <h3 class="product-title">Microondas Midea 28 litros Negro Espejado 0510MMOP03MOE</h3>
+        <div class="price-installment">18 x Gs. 59.000</div>
+        <div class="price-cash">Contado PYG 629.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Microondas%20Midea%2028%20Litros" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+</div>
+
+<h3 class="subcategory-title">Placas, Anafes y Cocina</h3>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/placa-a-induccion-tokyo-cotokpind-con-olla-2000w-placa-a-induccion-tokyo-cotokpind-con-olla-2000w.webp" alt="Placa A Induccion Tokyo Cotokpind Con Olla 2000W" class="product-img">
+        <h3 class="product-title">Placa A Induccion Tokyo Cotokpind Con Olla 2000W</h3>
+        <div class="price-installment">18 x Gs. 29.000</div>
+        <div class="price-cash">Contado PYG 269.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Placa%20A%20Induccion%20Tokyo%20Cotokpind" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/placa-infrarroja-multifuncion-con-olla-cotokpinfb-2000w-placa-infrarroja-multifuncion-con-olla-cotokpinfb-2000w.webp" alt="Placa Infrarroja Multifuncion Con Olla Cotokpinfb 2000W" class="product-img">
+        <h3 class="product-title">Placa Infrarroja Multifuncion Con Olla Cotokpinfb 2000W</h3>
+        <div class="price-installment">18 x Gs. 29.000</div>
+        <div class="price-cash">Contado PYG 209.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Placa%20Infrarroja%20Multifuncion%20Cotokpinfb" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/placa-infrarroja-tokyo-display-led-panel-touch-c-timer-placa-infrarroja-tokyo-display-led-panel-touch-c-timer (1).webp" alt="Placa Infrarroja Tokyo Display Led + Panel Touch c/ Timer" class="product-img">
+        <h3 class="product-title">Placa Infrarroja Tokyo Display Led + Panel Touch c/ Timer</h3>
+        <div class="price-installment">18 x Gs. 19.000</div>
+        <div class="price-cash">Contado PYG 279.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Placa%20Infrarroja%20Tokyo%20Display%20Led" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/anafe-tokyo-infrarrojo-4-zonas-vitroceramico-6400w-anafe-tokyo-infrarrojo-4-zonas-vitroceramico-6400w.webp" alt="Anafe Tokyo Infrarrojo 4 Zonas Vitrocerámico 6400W" class="product-img">
+        <h3 class="product-title">Anafe Tokyo Infrarrojo 4 Zonas Vitrocerámico 6400W</h3>
+        <div class="price-installment">18 x Gs. 109.000</div>
+        <div class="price-cash">Contado PYG 1.179.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Anafe%20Tokyo%20Infrarrojo%204%20Zonas" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/freidora-air-fry-digital-peabody-3-2-litros-freidora-air-fry-digital-peabody-3-2-litros.webp" alt="Freidora Air Fry Digital Peabody 3.2 litros" class="product-img">
+        <h3 class="product-title">Freidora Air Fry Digital Peabody 3.2 litros</h3>
+        <div class="price-installment">18 x Gs. 69.000</div>
+        <div class="price-cash">Contado PYG 719.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Freidora%20Air%20Fry%20Digital%20Peabody" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/churrasquera-grill-tokyo-flexi-180-2000w-churrasquera-grill-tokyo-flexi-180-2000w.webp" alt="Churrasquera Grill Tokyo Flexi 180 2000W" class="product-img">
+        <h3 class="product-title">Churrasquera Grill Tokyo Flexi 180 2000W</h3>
+        <div class="price-installment">18 x Gs. 29.000</div>
+        <div class="price-cash">Contado PYG 329.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Churrasquera%20Grill%20Tokyo" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+</div>
+
+<h3 class="subcategory-title">Licuadoras, Mixer, Hervidoras y Más</h3>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/licuadora-tokyo-licuamax-plus-con-filtro-licuadora-tokyo-licuamax-plus-con-filtro.webp" alt="Licuadora Tokyo Licuamax Plus Con Filtro" class="product-img">
+        <h3 class="product-title">Licuadora Tokyo Licuamax Plus Con Filtro</h3>
+        <div class="price-installment">18 x Gs. 19.000</div>
+        <div class="price-cash">Contado PYG 179.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Licuadora%20Tokyo%20Licuamax%20Plus" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/licuadora-tokyo-1-5-litros-5-velocidades-500w-licuadora-tokyo-1-5-litros-5-velocidades-500w.webp" alt="Licuadora Tokyo 1,5 Litros 5 Velocidades 500W" class="product-img">
+        <h3 class="product-title">Licuadora Tokyo 1,5 Litros 5 Velocidades 500W</h3>
+        <div class="price-installment">18 x Gs. 29.000</div>
+        <div class="price-cash">Contado PYG 279.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Licuadora%20Tokyo%201.5%20Litros" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/mixer-electrolux-eib20-3-en-1-600w-2-velocidades-mixer-electrolux-eib20-3-en-1-600w-2-velocidades.webp" alt="Mixer Electrolux Eib20 3 En 1 600W 2 Velocidades" class="product-img">
+        <h3 class="product-title">Mixer Electrolux Eib20 3 En 1 600W 2 Velocidades</h3>
+        <div class="price-installment">18 x Gs. 29.000</div>
+        <div class="price-cash">Contado PYG 319.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Mixer%20Electrolux%20Eib20" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/hervidora-tokyo-easy-pro-1-7-litros-hervidora-tokyo-easy-pro-1-7-litros (1).webp" alt="Hervidora Tokyo Easy Pro 1.7 litros" class="product-img">
+        <h3 class="product-title">Hervidora Tokyo Easy Pro 1.7 litros</h3>
+        <div class="price-installment">18 x Gs. 19.000</div>
+        <div class="price-cash">Contado PYG 109.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Hervidora%20Tokyo%20Easy%20Pro" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/tostadora-midea-2-ranuras-950-w-tostadora-midea-2-ranuras-950-w.webp" alt="Tostadora Midea 2 Ranuras 950 W" class="product-img">
+        <h3 class="product-title">Tostadora Midea 2 Ranuras 950 W</h3>
+        <div class="price-installment">18 x Gs. 29.000</div>
+        <div class="price-cash">Contado PYG 139.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Tostadora%20Midea%202%20Ranuras" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/sandwichera-oster-ckstsm400-2-plato-negro-sandwichera-oster-ckstsm400-2-plato-negro.webp" alt="Sandwichera Oster CKSTSM400 2 Plato Negro" class="product-img">
+        <h3 class="product-title">Sandwichera Oster CKSTSM400 2 Plato Negro</h3>
+        <div class="price-installment">18 x Gs. 19.000</div>
+        <div class="price-cash">Contado PYG 159.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Sandwichera%20Oster" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/sandwichera-mallory-classic-grill-1002-sandwichera-mallory-classic-grill-1002.webp" alt="Sandwichera Mallory Classic Grill 1002" class="product-img">
+        <h3 class="product-title">Sandwichera Mallory Classic Grill 1002</h3>
+        <div class="price-installment">18 x Gs. 9.000</div>
+        <div class="price-cash">Contado PYG 89.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Sandwichera%20Mallory%20Classic%20Grill" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/sandwichera-tokyo-maxcrisp-sandwichera-tokyo-maxcrisp.webp" alt="Sandwichera Tokyo Maxcrisp" class="product-img">
+        <h3 class="product-title">Sandwichera Tokyo Maxcrisp</h3>
+        <div class="price-installment">18 x Gs. 9.000</div>
+        <div class="price-cash">Contado PYG 89.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Sandwichera%20Tokyo%20Maxcrisp" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+</div>
+
+    <!-- ================= REFRIGERACIÓN ================= -->
+<section class="category-separator" id="refrigeracion">
+  <h2 class="category-title">REFRIGERACIÓN</h2>
+  <p class="category-subtitle">Heladeras • Congeladores • Bebederos • Winecoolers</p>
+</section>
+
+<h3 class="subcategory-title">Heladeras</h3>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-hisense-2-puertas-250-litros-gris-heladera-hisense-2-puertas-250-litros-gris.webp" alt="Heladera Hisense 2 Puertas 250 Litros Gris" class="product-img">
+        <h3 class="product-title">Heladera Hisense 2 Puertas 250 Litros Gris</h3>
+        <div class="price-installment">18 x Gs. 169.000</div>
+        <div class="price-cash">Contado PYG 1.829.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Hisense%20250%20Litros" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-hisense-270-litros-2-puertas-blanca-heladera-hisense-270-litros-2-puertas-blanca.webp" alt="Heladera Hisense 270 Litros 2 Puertas Blanca" class="product-img">
+        <h3 class="product-title">Heladera Hisense 270 Litros 2 Puertas Blanca</h3>
+        <div class="price-installment">18 x Gs. 179.000</div>
+        <div class="price-cash">Contado PYG 1.899.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Hisense%20270%20Litros" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-electrolux-2-puertas-268-litros-heladera-electrolux-2-puertas-268-litros.webp" alt="Heladera Electrolux 2 Puertas 268 Litros" class="product-img">
+        <h3 class="product-title">Heladera Electrolux 2 Puertas 268 Litros</h3>
+        <div class="price-installment">18 x Gs. 189.000</div>
+        <div class="price-cash">Contado PYG 2.019.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Electrolux%20268%20Litros" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-2-puertas-290-litros-blanca-heladera-midea-2-puertas-290-litros-blanca.webp" alt="Heladera Midea 2 Puertas 290 Litros Blanca" class="product-img">
+        <h3 class="product-title">Heladera Midea 2 Puertas 290 Litros Blanca</h3>
+        <div class="price-installment">18 x Gs. 189.000</div>
+        <div class="price-cash">Contado PYG 2.049.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20290%20Litros" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-midea-2-puertas-340-litros-blanca-heladera-midea-2-puertas-340-litros-blanca.webp" alt="Heladera Midea 2 Puertas 340 Litros Blanca" class="product-img">
+        <h3 class="product-title">Heladera Midea 2 Puertas 340 Litros Blanca</h3>
+        <div class="price-installment">18 x Gs. 209.000</div>
+        <div class="price-cash">Contado PYG 2.299.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Midea%20340%20Litros" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-hisense-340-litros-2-puertas-gris-heladera-hisense-340-litros-2-puertas-gris.webp" alt="Heladera Hisense 340 Litros 2 Puertas Gris" class="product-img">
+        <h3 class="product-title">Heladera Hisense 340 Litros 2 Puertas Gris</h3>
+        <div class="price-installment">18 x Gs. 219.000</div>
+        <div class="price-cash">Contado PYG 2.389.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Hisense%20340%20Litros" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-hisense-410-litros-2-puertas-gris-heladera-hisense-410-litros-2-puertas-gris.webp" alt="Heladera Hisense 410 Litros 2 Puertas Gris" class="product-img">
+        <h3 class="product-title">Heladera Hisense 410 Litros 2 Puertas Gris</h3>
+        <div class="price-installment">18 x Gs. 269.000</div>
+        <div class="price-cash">Contado PYG 2.989.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Hisense%20410%20Litros" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/heladera-electrolux-370-litros-2-puertas-inox-heladera-electrolux-370-litros-2-puertas-inox.webp" alt="Heladera Electrolux 370 Litros 2 Puertas Inox" class="product-img">
+        <h3 class="product-title">Heladera Electrolux 370 Litros 2 Puertas Inox</h3>
+        <div class="price-installment">18 x Gs. 289.000</div>
+        <div class="price-cash">Contado PYG 3.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Heladera%20Electrolux%20370%20Litros" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+</div>
+
+<h3 class="subcategory-title">Congeladores, Bebederos y Winecoolers</h3>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/congelador-midea-horizontal-200-litros-blanco-congelador-midea-horizontal-200-litros-blanco.webp" alt="Congelador Midea Horizontal 200 Litros Blanco" class="product-img">
+        <h3 class="product-title">Congelador Midea Horizontal 200 Litros Blanco</h3>
+        <div class="price-installment">18 x Gs. 149.000</div>
+        <div class="price-cash">Contado PYG 1.599.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20Midea%20200%20Litros" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/congelador-midea-horizontal-300-litros-blanco-congelador-midea-horizontal-300-litros-blanco.webp" alt="Congelador Midea Horizontal 300 Litros Blanco" class="product-img">
+        <h3 class="product-title">Congelador Midea Horizontal 300 Litros Blanco</h3>
+        <div class="price-installment">18 x Gs. 179.000</div>
+        <div class="price-cash">Contado PYG 1.949.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Congelador%20Midea%20300%20Litros" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/bebedero-tokyo-tkbe-2-temperatura-bebedero-tokyo-tkbe-2-temperatura.webp" alt="Bebedero Tokyo TKBE 2 Temperatura" class="product-img">
+        <h3 class="product-title">Bebedero Tokyo TKBE 2 Temperatura</h3>
+        <div class="price-installment">18 x Gs. 39.000</div>
+        <div class="price-cash">Contado PYG 379.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Bebedero%20Tokyo" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/winecooler-midea-12-botellas-negro-winecooler-midea-12-botellas-negro.webp" alt="Winecooler Midea 12 Botellas Negro" class="product-img">
+        <h3 class="product-title">Winecooler Midea 12 Botellas Negro</h3>
+        <div class="price-installment">18 x Gs. 79.000</div>
+        <div class="price-cash">Contado PYG 849.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Winecooler%20Midea%2012%20Botellas" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+</div>
+
+    <!-- ================= LAVADO Y HOGAR ================= -->
+<section class="category-separator" id="lavado">
+  <h2 class="category-title">LAVADO Y HOGAR</h2>
+  <p class="category-subtitle">Lavarropas • Secarropas • Planchas • Aspiradoras</p>
+</section>
+
+<h3 class="subcategory-title">Lavarropas y Secarropas</h3>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/lavarropas-midea-10-5-kg-carga-superior-blanco-lavarropas-midea-10-5-kg-carga-superior-blanco.webp" alt="Lavarropas Midea 10.5 Kg Carga Superior Blanco" class="product-img">
+        <h3 class="product-title">Lavarropas Midea 10.5 Kg Carga Superior Blanco</h3>
+        <div class="price-installment">18 x Gs. 139.000</div>
+        <div class="price-cash">Contado PYG 1.489.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Lavarropas%20Midea%2010.5%20Kg" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/lavarropas-midea-12-kg-carga-superior-blanco-lavarropas-midea-12-kg-carga-superior-blanco.webp" alt="Lavarropas Midea 12 Kg Carga Superior Blanco" class="product-img">
+        <h3 class="product-title">Lavarropas Midea 12 Kg Carga Superior Blanco</h3>
+        <div class="price-installment">18 x Gs. 159.000</div>
+        <div class="price-cash">Contado PYG 1.699.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Lavarropas%20Midea%2012%20Kg" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/lavarropas-electrolux-12-kg-carga-superior-blanco-lavarropas-electrolux-12-kg-carga-superior-blanco.webp" alt="Lavarropas Electrolux 12 Kg Carga Superior Blanco" class="product-img">
+        <h3 class="product-title">Lavarropas Electrolux 12 Kg Carga Superior Blanco</h3>
+        <div class="price-installment">18 x Gs. 179.000</div>
+        <div class="price-cash">Contado PYG 1.939.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Lavarropas%20Electrolux%2012%20Kg" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/lavarropas-electrolux-9-kg-carga-frontal-blanco-lavarropas-electrolux-9-kg-carga-frontal-blanco.webp" alt="Lavarropas Electrolux 9 Kg Carga Frontal Blanco" class="product-img">
+        <h3 class="product-title">Lavarropas Electrolux 9 Kg Carga Frontal Blanco</h3>
+        <div class="price-installment">18 x Gs. 219.000</div>
+        <div class="price-cash">Contado PYG 2.399.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Lavarropas%20Electrolux%209%20Kg%20Frontal" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/secarropas-tokyo-7-kg-blanco-secarropas-tokyo-7-kg-blanco.webp" alt="Secarropas Tokyo 7 Kg Blanco" class="product-img">
+        <h3 class="product-title">Secarropas Tokyo 7 Kg Blanco</h3>
+        <div class="price-installment">18 x Gs. 99.000</div>
+        <div class="price-cash">Contado PYG 1.049.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Secarropas%20Tokyo%207%20Kg" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+</div>
+
+<h3 class="subcategory-title">Planchas y Aspiradoras</h3>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/plancha-tokyo-vapor-vertical-2000w-plancha-tokyo-vapor-vertical-2000w.webp" alt="Plancha Tokyo Vapor Vertical 2000W" class="product-img">
+        <h3 class="product-title">Plancha Tokyo Vapor Vertical 2000W</h3>
+        <div class="price-installment">18 x Gs. 19.000</div>
+        <div class="price-cash">Contado PYG 159.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Plancha%20Tokyo%20Vapor" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/plancha-oster-a-vapor-gris-plancha-oster-a-vapor-gris.webp" alt="Plancha Oster A Vapor Gris" class="product-img">
+        <h3 class="product-title">Plancha Oster A Vapor Gris</h3>
+        <div class="price-installment">18 x Gs. 29.000</div>
+        <div class="price-cash">Contado PYG 199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Plancha%20Oster%20A%20Vapor" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/aspiradora-tokyo-1600w-bolsa-aspiradora-tokyo-1600w-bolsa.webp" alt="Aspiradora Tokyo 1600W Bolsa" class="product-img">
+        <h3 class="product-title">Aspiradora Tokyo 1600W Bolsa</h3>
+        <div class="price-installment">18 x Gs. 29.000</div>
+        <div class="price-cash">Contado PYG 269.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Aspiradora%20Tokyo%201600W" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/aspiradora-electrolux-cyclonic-1600w-aspiradora-electrolux-cyclonic-1600w.webp" alt="Aspiradora Electrolux Cyclonic 1600W" class="product-img">
+        <h3 class="product-title">Aspiradora Electrolux Cyclonic 1600W</h3>
+        <div class="price-installment">18 x Gs. 49.000</div>
+        <div class="price-cash">Contado PYG 479.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Aspiradora%20Electrolux%20Cyclonic" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+</div>
+
+    <!-- ================= TECNOLOGÍA Y TV ================= -->
+<section class="category-separator" id="tecnologia">
+  <h2 class="category-title">TECNOLOGÍA Y TV</h2>
+  <p class="category-subtitle">Smart TV • Tablets • Impresoras • Parlantes</p>
+</section>
+
+<h3 class="subcategory-title">Smart TV</h3>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/smart-tv-hisense-32-pulgadas-hd-smart-tv-hisense-32-pulgadas-hd.webp" alt="Smart TV Hisense 32 Pulgadas HD" class="product-img">
+        <h3 class="product-title">Smart TV Hisense 32 Pulgadas HD</h3>
+        <div class="price-installment">18 x Gs. 109.000</div>
+        <div class="price-cash">Contado PYG 1.149.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Smart%20TV%20Hisense%2032" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/smart-tv-hisense-43-pulgadas-4k-uhd-smart-tv-hisense-43-pulgadas-4k-uhd.webp" alt="Smart TV Hisense 43 Pulgadas 4K UHD" class="product-img">
+        <h3 class="product-title">Smart TV Hisense 43 Pulgadas 4K UHD</h3>
+        <div class="price-installment">18 x Gs. 149.000</div>
+        <div class="price-cash">Contado PYG 1.599.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Smart%20TV%20Hisense%2043" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/smart-tv-hisense-50-pulgadas-4k-uhd-smart-tv-hisense-50-pulgadas-4k-uhd.webp" alt="Smart TV Hisense 50 Pulgadas 4K UHD" class="product-img">
+        <h3 class="product-title">Smart TV Hisense 50 Pulgadas 4K UHD</h3>
+        <div class="price-installment">18 x Gs. 189.000</div>
+        <div class="price-cash">Contado PYG 1.999.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Smart%20TV%20Hisense%2050" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/smart-tv-hisense-55-pulgadas-4k-uhd-smart-tv-hisense-55-pulgadas-4k-uhd.webp" alt="Smart TV Hisense 55 Pulgadas 4K UHD" class="product-img">
+        <h3 class="product-title">Smart TV Hisense 55 Pulgadas 4K UHD</h3>
+        <div class="price-installment">18 x Gs. 219.000</div>
+        <div class="price-cash">Contado PYG 2.399.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Smart%20TV%20Hisense%2055" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/smart-tv-hisense-65-pulgadas-4k-uhd-smart-tv-hisense-65-pulgadas-4k-uhd.webp" alt="Smart TV Hisense 65 Pulgadas 4K UHD" class="product-img">
+        <h3 class="product-title">Smart TV Hisense 65 Pulgadas 4K UHD</h3>
+        <div class="price-installment">18 x Gs. 299.000</div>
+        <div class="price-cash">Contado PYG 3.199.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Smart%20TV%20Hisense%2065" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+</div>
+
+<h3 class="subcategory-title">Tablets, Impresoras y Parlantes</h3>
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/tablet-samsung-galaxy-tab-a9-64gb-tablet-samsung-galaxy-tab-a9-64gb.webp" alt="Tablet Samsung Galaxy Tab A9 64GB" class="product-img">
+        <h3 class="product-title">Tablet Samsung Galaxy Tab A9 64GB</h3>
+        <div class="price-installment">18 x Gs. 89.000</div>
+        <div class="price-cash">Contado PYG 949.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Tablet%20Samsung%20Galaxy%20Tab%20A9" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/impresora-hp-deskjet-2820-multifuncion-impresora-hp-deskjet-2820-multifuncion.webp" alt="Impresora HP DeskJet 2820 Multifuncion" class="product-img">
+        <h3 class="product-title">Impresora HP DeskJet 2820 Multifuncion</h3>
+        <div class="price-installment">18 x Gs. 49.000</div>
+        <div class="price-cash">Contado PYG 499.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20la%20Impresora%20HP%20DeskJet%202820" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-jbl-flip-6-portatil-parlante-jbl-flip-6-portatil.webp" alt="Parlante JBL Flip 6 Portatil" class="product-img">
+        <h3 class="product-title">Parlante JBL Flip 6 Portatil</h3>
+        <div class="price-installment">18 x Gs. 69.000</div>
+        <div class="price-cash">Contado PYG 749.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20JBL%20Flip%206" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/parlante-tokyo-torre-200w-bluetooth-parlante-tokyo-torre-200w-bluetooth.webp" alt="Parlante Tokyo Torre 200W Bluetooth" class="product-img">
+        <h3 class="product-title">Parlante Tokyo Torre 200W Bluetooth</h3>
+        <div class="price-installment">18 x Gs. 89.000</div>
+        <div class="price-cash">Contado PYG 949.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Parlante%20Tokyo%20Torre%20200W" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+</div>
+
+    <!-- ================= CELULARES ================= -->
+<section class="category-separator" id="celulares">
+  <h2 class="category-title">CELULARES</h2>
+  <p class="category-subtitle">Celulares • Accesorios</p>
+</section>
+
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/celular-samsung-galaxy-a06-64gb-celular-samsung-galaxy-a06-64gb.webp" alt="Celular Samsung Galaxy A06 64GB" class="product-img">
+        <h3 class="product-title">Celular Samsung Galaxy A06 64GB</h3>
+        <div class="price-installment">18 x Gs. 69.000</div>
+        <div class="price-cash">Contado PYG 729.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Celular%20Samsung%20Galaxy%20A06%2064GB" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/celular-samsung-galaxy-a16-128gb-celular-samsung-galaxy-a16-128gb.webp" alt="Celular Samsung Galaxy A16 128GB" class="product-img">
+        <h3 class="product-title">Celular Samsung Galaxy A16 128GB</h3>
+        <div class="price-installment">18 x Gs. 99.000</div>
+        <div class="price-cash">Contado PYG 1.049.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Celular%20Samsung%20Galaxy%20A16%20128GB" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/celular-samsung-galaxy-a26-128gb-celular-samsung-galaxy-a26-128gb.webp" alt="Celular Samsung Galaxy A26 128GB" class="product-img">
+        <h3 class="product-title">Celular Samsung Galaxy A26 128GB</h3>
+        <div class="price-installment">18 x Gs. 129.000</div>
+        <div class="price-cash">Contado PYG 1.399.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Celular%20Samsung%20Galaxy%20A26%20128GB" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/celular-samsung-galaxy-a36-256gb-celular-samsung-galaxy-a36-256gb.webp" alt="Celular Samsung Galaxy A36 256GB" class="product-img">
+        <h3 class="product-title">Celular Samsung Galaxy A36 256GB</h3>
+        <div class="price-installment">18 x Gs. 189.000</div>
+        <div class="price-cash">Contado PYG 1.999.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Celular%20Samsung%20Galaxy%20A36%20256GB" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/celular-xiaomi-redmi-14c-256gb-celular-xiaomi-redmi-14c-256gb.webp" alt="Celular Xiaomi Redmi 14C 256GB" class="product-img">
+        <h3 class="product-title">Celular Xiaomi Redmi 14C 256GB</h3>
+        <div class="price-installment">18 x Gs. 89.000</div>
+        <div class="price-cash">Contado PYG 949.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Celular%20Xiaomi%20Redmi%2014C" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/celular-xiaomi-redmi-note-13-256gb-celular-xiaomi-redmi-note-13-256gb.webp" alt="Celular Xiaomi Redmi Note 13 256GB" class="product-img">
+        <h3 class="product-title">Celular Xiaomi Redmi Note 13 256GB</h3>
+        <div class="price-installment">18 x Gs. 129.000</div>
+        <div class="price-cash">Contado PYG 1.399.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Celular%20Xiaomi%20Redmi%20Note%2013" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+</div>
+
+    <!-- ================= MUEBLES ================= -->
+<section class="category-separator" id="muebles">
+  <h2 class="category-title">MUEBLES</h2>
+  <p class="category-subtitle">Sommier • Colchones</p>
+</section>
+
+<div class="products-grid">
+
+      <div class="product-card">
+        <img loading="lazy" src="img/sommier-tokyo-1-plaza-80x190-sommier-tokyo-1-plaza-80x190.webp" alt="Sommier Tokyo 1 Plaza 80x190" class="product-img">
+        <h3 class="product-title">Sommier Tokyo 1 Plaza 80x190</h3>
+        <div class="price-installment">18 x Gs. 89.000</div>
+        <div class="price-cash">Contado PYG 949.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Sommier%20Tokyo%201%20Plaza" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/sommier-tokyo-2-plazas-140x190-sommier-tokyo-2-plazas-140x190.webp" alt="Sommier Tokyo 2 Plazas 140x190" class="product-img">
+        <h3 class="product-title">Sommier Tokyo 2 Plazas 140x190</h3>
+        <div class="price-installment">18 x Gs. 129.000</div>
+        <div class="price-cash">Contado PYG 1.399.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Sommier%20Tokyo%202%20Plazas" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+      <div class="product-card">
+        <img loading="lazy" src="img/sommier-tokyo-queen-160x200-sommier-tokyo-queen-160x200.webp" alt="Sommier Tokyo Queen 160x200" class="product-img">
+        <h3 class="product-title">Sommier Tokyo Queen 160x200</h3>
+        <div class="price-installment">18 x Gs. 159.000</div>
+        <div class="price-cash">Contado PYG 1.699.000</div>
+        <a href="https://wa.me/595987331833?text=Hola,%20me%20interesa%20el%20Sommier%20Tokyo%20Queen" class="btn-whatsapp product-btn" target="_blank"><span>CONSULTAR</span></a>
+      </div>
+
+</div>
+
+  </main>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/595987331833" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.4); z-index: 999;">💬</a>
+
+  <script>
+    function filtrarProductos() {
+      var input = document.getElementById('searchInput');
+      var filter = input.value.toLowerCase();
+      var cards = document.getElementsByClassName('product-card');
+      var separators = document.getElementsByClassName('category-separator');
+      var subTitles = document.getElementsByClassName('subcategory-title');
+      var grids = document.getElementsByClassName('products-grid');
+
+      for (var i = 0; i < cards.length; i++) {
+        var title = cards[i].getElementsByClassName('product-title')[0].textContent.toLowerCase();
+        if (title.indexOf(filter) > -1) {
+          cards[i].style.display = "";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+
+      // Si está buscando, ocultar títulos de categorías
+      var buscando = filter.length > 0;
+      for (var j = 0; j < separators.length; j++) {
+        separators[j].style.display = buscando ? "none" : "";
+      }
+      for (var k = 0; k < subTitles.length; k++) {
+        subTitles[k].style.display = buscando ? "none" : "";
+      }
+    }
+  </script>
+
+</body>
+</html>
