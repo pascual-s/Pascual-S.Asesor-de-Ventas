@@ -32,6 +32,14 @@
 @media (max-width: 520px){
   .products-grid{ grid-template-columns: repeat(2, 1fr); gap: 10px; }
 }
+.category-separator,
+.subcategory-title{
+  grid-column: 1 / -1;
+  width: 100%;
+}
+.products-grid{
+  justify-content: center;
+}
     /* Encabezado compacto con flexbox */
     .header-container {
       display: flex;
@@ -5013,13 +5021,15 @@
           <span>CONSULTAR</span>
         </a>
       </div>
-
+      
+</div>  <!-- <-- este cierra el grid anterior -->
       <!-- ================= SEPARADOR REFRIGERACIÓN ================= -->
 <section class="category-separator" id="refrigeracion">
   <h2 class="category-title">REFRIGERACIÓN</h2>
   <p class="category-subtitle">Heladeras • Congeladores • Bebederos • Winecoolers • Visicoolers</p>
 </section>
 
+</div>  <!-- <-- este cierra el grid anterior -->
 <!-- ================= HELADERAS ================= -->
 <h3 class="subcategory-title">HELADERAS</h3>
 <div class="products-grid">
