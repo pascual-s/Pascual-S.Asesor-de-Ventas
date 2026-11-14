@@ -13,7 +13,25 @@
       margin: 0;
       padding: 20px;
     }
-
+.products-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5px;
+}
+.product-card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+@media (max-width: 900px){
+  .products-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px){
+  .products-grid{ grid-template-columns: repeat(2, 1fr); gap: 10px; }
+}
     /* Encabezado compacto con flexbox */
     .header-container {
       display: flex;
